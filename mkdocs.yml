@@ -1,0 +1,38 @@
+site_name: Azure ML 60-minute Blitz
+
+theme:
+    name: material
+
+nav:
+    - Introduction: introduction.md
+    - 1 - Setup: lesson01-setup.md
+    - 2 - Hello AML: lesson02-hello_aml.md
+    - 3 - Environments: lesson03-environments.md
+    - 4 - Data Data Data: lesson04-datadatadata.md
+    - 5 - Pipelines: lesson05-pipelines.md
+
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    - codehilite
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.progressbar
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tabbed
+    - pymdownx.tilde
