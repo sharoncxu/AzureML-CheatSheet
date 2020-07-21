@@ -49,7 +49,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deep-learning-with-azure-ml" class="md-skip">
+        <a href="#introduction-to-azure-machine-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -77,7 +77,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Deep learning with Azure ML
+              Introduction
             
           </span>
         </div>
@@ -149,11 +149,49 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="introduction/" title="Introduction" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
       Introduction
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-azure-machine-learning" class="md-nav__link">
+    Introduction to Azure Machine Learning
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -231,8 +269,23 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-azure-machine-learning" class="md-nav__link">
+    Introduction to Azure Machine Learning
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -248,36 +301,21 @@
                   
                 
                 
-                <h1 id="deep-learning-with-azure-ml">Deep learning with Azure ML</h1>
-<p>Welcome the the Azure Machine Learning (AML) 60-minute blitz (inspired by the excellent <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">PyTorch 60-minute blitz</a>).</p>
-<p>By the end of this session you will:</p>
-<ul>
-<li>Be able to train and monitor models on Azure using the AML Python SDK</li>
-<li>Scale up your compute resources (from a single CPU to a distributed cluster of GPUs)</li>
-<li>Some other things too perhaps :-)</li>
-</ul>
-<p><strong>NOTE.</strong> <a href="https://docs.microsoft.com/en-us/python/api/overview/azure/ml/?view=azure-ml-py">This page</a> is a good skeleton for the 60-minute blitz for the Python SDK.</p>
-<p><strong>Session 1</strong> - <a href="session-01.md">Getting started with the Azure ML Python SDK</a></p>
-<!-- ## Getting Started
-
-- Getting your AML Workspace set up
-- Set up compute instance
-- Set up compute cluster
-
-## Managing Environments
-
-- With conda
-- With pip
-- With docker
-- With custom estimators
-
-## Running Scripts Remotely
-
-- Run hello-world.py script on AML remote compute
-- Run PyTorch model on AML remote compute
-- Run TensorFlow model on AML remote compute
-
-## Logging Metrics -->
+                  <h1>Introduction</h1>
+                
+                <h2 id="introduction-to-azure-machine-learning">Introduction to Azure Machine Learning</h2>
+<p>Azure Machine Learning (AML) is a cloud service built for end-to-end machine learning, from developing in interactive notebooks and training on scalable clusters of VMs to monitoring key performance metrics and deploying models into production. AML provides a flexible set of tools built on top of Azure's powerful infrastructure.</p>
+<p>In this tutorial we introduce the fundamental concepts required to quickly get started with AML.</p>
+<p><strong><a href="lesson01-setup/">Lesson 1: Setup</a></strong> <em>(5 minutes)</em><br />
+Register your AML workspace, get the Azure ML Python SDK and create your compute infrastructure.</p>
+<p><strong><a href="lesson02-hello_aml/">Lesson 2: Hello AML</a></strong> <em>(10 minutes)</em><br />
+Train our first model in the cloud with Azure ML's Python SDK.</p>
+<p><strong><a href="lesson03-environments/">Lesson 3: Environments</a></strong> <em>(10 minutes)</em><br />
+Manage our training environments with conda, pip and docker.</p>
+<p><strong><a href="lesson04-datadatadata/">Lesson 4: Data Data Data</a></strong> <em>(10 minutes)</em><br />
+Description...</p>
+<p><strong><a href="lesson05-pipelines/">Lesson 5: Pipelines</a></strong> <em>(10 minutes)</em><br />
+Description...</p>
                 
               
               
@@ -292,6 +330,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="lesson01-setup/" title="1 - Setup" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                1 - Setup
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
