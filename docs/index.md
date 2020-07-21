@@ -1,36 +1,20 @@
-# Deep learning with Azure ML
+## Introduction to Azure Machine Learning
 
-Welcome the the Azure Machine Learning (AML) 60-minute blitz (inspired by the excellent [PyTorch 60-minute blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)).
+Azure Machine Learning (AML) is a cloud service built for end-to-end machine learning, from developing in interactive notebooks and training on scalable clusters of VMs to monitoring key performance metrics and deploying models into production. AML provides a flexible set of tools built on top of Azure's powerful infrastructure.
 
-By the end of this session you will:
+In this tutorial we introduce the fundamental concepts required to quickly get started with AML.
 
-- Be able to train and monitor models on Azure using the AML Python SDK
-- Scale up your compute resources (from a single CPU to a distributed cluster of GPUs)
-- Some other things too perhaps :-)
+**[Lesson 1: Setup](lesson01-setup.md)** _(5 minutes)_  
+Register your AML workspace, get the Azure ML Python SDK and create your compute infrastructure.
 
-**NOTE.** [This page](https://docs.microsoft.com/en-us/python/api/overview/azure/ml/?view=azure-ml-py) is a good skeleton for the 60-minute blitz for the Python SDK.
+**[Lesson 2: Hello AML](lesson02-hello_aml.md)** _(10 minutes)_  
+Train our first model in the cloud with Azure ML's Python SDK.
 
-**Session 1** - [Getting started with the Azure ML Python SDK](session-01.md)
+**[Lesson 3: Environments](lesson03-environments.md)** _(10 minutes)_  
+Manage our training environments with conda, pip and docker.
 
+**[Lesson 4: Data Data Data](lesson04-datadatadata.md)** _(10 minutes)_  
+Description...
 
-
-<!-- ## Getting Started
-
-- Getting your AML Workspace set up
-- Set up compute instance
-- Set up compute cluster
-
-## Managing Environments
-
-- With conda
-- With pip
-- With docker
-- With custom estimators
-
-## Running Scripts Remotely
-
-- Run hello-world.py script on AML remote compute
-- Run PyTorch model on AML remote compute
-- Run TensorFlow model on AML remote compute
-
-## Logging Metrics -->
+**[Lesson 5: Pipelines](lesson05-pipelines.md)** _(10 minutes)_  
+Description...

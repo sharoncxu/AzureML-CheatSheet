@@ -6,10 +6,13 @@ By the end of the lesson you will...
 
 Pre-requesits:...
 
-## Rough notes
+## Register your AML Workspace
 
-- Set up your Azure ML Workspace
-- Download the python sdk with e.g.
+Put some words here...
+
+## Azure ML Python SDK
+
+The Azure ML Python SDK is a Python library used to interact with AML.
 
 === "Pip"
     Simply run:
@@ -41,3 +44,7 @@ Pre-requesits:...
     Should we provide a docker image?  
 
     Go [here](https://docs.microsoft.com/en-us/python/api/overview/azure/ml/install?view=azure-ml-py) for more details on installing the AzureML Python SDK.
+
+## Create Compute
+
+Put words here...

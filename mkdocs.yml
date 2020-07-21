@@ -4,7 +4,7 @@ theme:
     name: material
 
 nav:
-    - Introduction: introduction.md
+    - Introduction: index.md
     - 1 - Setup: lesson01-setup.md
     - 2 - Hello AML: lesson02-hello_aml.md
     - 3 - Environments: lesson03-environments.md
