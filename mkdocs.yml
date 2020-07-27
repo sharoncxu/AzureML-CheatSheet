@@ -4,12 +4,7 @@ theme:
     name: material
 
 nav:
-    - Introduction: index.md
-    - 1 - Setup: lesson01-setup.md
-    - 2 - Hello AML: lesson02-hello_aml.md
-    - 3 - Environments: lesson03-environments.md
-    - 4 - Data Data Data: lesson04-datadatadata.md
-    - 5 - Pipelines: lesson05-pipelines.md
+    - Home: index.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
