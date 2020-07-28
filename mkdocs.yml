@@ -1,10 +1,13 @@
-site_name: Azure ML 60-minute Blitz
+site_name: Azure ML Cheat Sheet
 
 theme:
     name: material
+    logo: more/aml.Default
+    favicon: more/aml.Default
 
 nav:
     - Home: index.md
+    - VS Code Snippets: vs-code-snippets/snippets.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
