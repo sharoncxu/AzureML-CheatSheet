@@ -41,7 +41,7 @@
         "description": "Create workspace from config and auth"
     },
 
-    "Register Blob Container": {
+    "Register Azure Blob Container From SAS": {
         "prefix": ["datastore-register-blob-sas","reg-blob-sas"],
         "body": [
             "ds = Datastore.register_azure_blob_container("
