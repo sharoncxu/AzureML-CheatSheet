@@ -76,7 +76,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Cheatsheet
             
           </span>
         </div>
@@ -158,14 +158,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home
+        Cheatsheet
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
-      Home
+    <a href="." title="Cheatsheet" class="md-nav__link md-nav__link--active">
+      Cheatsheet
     </a>
     
       
@@ -286,6 +286,18 @@
   <li class="md-nav__item">
     <a href="vs-code-snippets/snippets/" title="VS Code Snippets" class="md-nav__link">
       VS Code Snippets
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="templates/" title="Templates" class="md-nav__link">
+      Templates
     </a>
   </li>
 
@@ -458,9 +470,14 @@
 <span class="n">compute_target</span> <span class="o">=</span> <span class="n">ComputeTarget</span><span class="p">(</span><span class="n">workspace</span><span class="o">=</span><span class="n">ws</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&lt;compute-name&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<p>To create a new cluster of, e.g., "Standard_NC24rs_v3" VMs,</p>
+<p>For example, to create a new cluster of between 0 and 4 "Standard_NC24rs_v3" VMs,</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">ComputeTarget</span>
 <span class="kn">from</span> <span class="nn">azureml.core.compute</span> <span class="kn">import</span> <span class="n">AmlCompute</span>
+<span class="n">compute_config</span> <span class="o">=</span> <span class="n">AmlCompute</span><span class="o">.</span><span class="n">provisioning_configuration</span><span class="p">(</span>
+    <span class="n">vm_size</span><span class="o">=</span><span class="s2">&quot;Standard_NC24rs_v3&quot;</span><span class="p">,</span>
+    <span class="n">min_nodes</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_nodes</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="n">compute_target</span> <span class="o">=</span> <span class="n">ComputeTarget</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;compute-name&gt;&quot;</span><span class="p">,</span> <span class="n">compute_config</span><span class="p">)</span>
 <span class="n">compute_target</span><span class="o">.</span><span class="n">wait_for_completion</span><span class="p">(</span><span class="n">show_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
