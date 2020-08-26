@@ -184,11 +184,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basics" class="md-nav__link">
-    Basics
+  <a href="#aml-assets" class="md-nav__link">
+    AML Assets
   </a>
   
-    <nav class="md-nav" aria-label="Basics">
+    <nav class="md-nav" aria-label="AML Assets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -199,15 +199,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#datastore" class="md-nav__link">
-    Datastore
+  <a href="#experiment" class="md-nav__link">
+    Experiment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#compute-targets" class="md-nav__link">
-    Compute Targets
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-target" class="md-nav__link">
+    Compute Target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datastore" class="md-nav__link">
+    Datastore
   </a>
   
 </li>
@@ -228,33 +249,6 @@
           <li class="md-nav__item">
   <a href="#scriptrunconfig" class="md-nav__link">
     ScriptRunConfig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    Experiments
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environments" class="md-nav__link">
-    Environments
-  </a>
-  
-    <nav class="md-nav" aria-label="Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#environment" class="md-nav__link">
-    Environment
   </a>
   
 </li>
@@ -348,11 +342,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basics" class="md-nav__link">
-    Basics
+  <a href="#aml-assets" class="md-nav__link">
+    AML Assets
   </a>
   
-    <nav class="md-nav" aria-label="Basics">
+    <nav class="md-nav" aria-label="AML Assets">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -363,15 +357,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#datastore" class="md-nav__link">
-    Datastore
+  <a href="#experiment" class="md-nav__link">
+    Experiment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#compute-targets" class="md-nav__link">
-    Compute Targets
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute-target" class="md-nav__link">
+    Compute Target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datastore" class="md-nav__link">
+    Datastore
   </a>
   
 </li>
@@ -392,33 +407,6 @@
           <li class="md-nav__item">
   <a href="#scriptrunconfig" class="md-nav__link">
     ScriptRunConfig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    Experiments
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environments" class="md-nav__link">
-    Environments
-  </a>
-  
-    <nav class="md-nav" aria-label="Environments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#environment" class="md-nav__link">
-    Environment
   </a>
   
 </li>
@@ -472,7 +460,7 @@
                 
                 
                 <h1 id="azure-ml-cheat-sheet">Azure ML Cheat Sheet</h1>
-<h2 id="basics">Basics</h2>
+<h2 id="aml-assets">AML Assets</h2>
 <h4 id="workspace"><a href="more/workspace/">Workspace</a></h4>
 <p>Instantiate <code>Workspace</code> object used to connect to your AML assets.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Workspace</span>
@@ -499,33 +487,58 @@ constructors of many other classes. In the following examples we frequently
 omit the workspace object instantiation and simply refer to <code>ws</code>.</p>
 <p>See the <a href="more/workspace/">workspaces</a> page for more ways to instantiate a
 workspace.</p>
-<h4 id="datastore"><a href="more/datastore/">Datastore</a></h4>
-<p>Each workspace comes with a default datastore.</p>
-<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">get_default_datastore</span><span class="p">()</span>
+<h4 id="experiment">Experiment</h4>
+<p>An experiment is used as an organizational principle, storing run history and
+tracking metrics.</p>
+<p>Get or create an experiment:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Experiment</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Any datastore that is registered to workspace can be accessed by name.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Datastore</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">Datastore</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;name-of-registered-datastore&gt;&quot;</span><span class="p">)</span>
+<h4 id="run">Run</h4>
+<p>A run represents a single trial of an experiment.</p>
+<p>Runs are used to monitor the asynchronous execution of a trial, log metrics and
+store output of the trial, and to analyze results and access artifacts
+generated by the trial.</p>
+<p>To get all the runs associated with a given experiment.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Experiment</span><span class="p">,</span> <span class="n">Run</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">get_runs</span><span class="p">()</span>
+<span class="c1"># generator of the runs in reverse chronological order</span>
 </code></pre></div>
 
-<p>To register an Azure Blob container via a SAS token:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="n">Datastore</span><span class="o">.</span><span class="n">register_azure_blob_container</span><span class="p">(</span>
-    <span class="n">workspace</span><span class="o">=</span><span class="n">ws</span><span class="p">,</span>
-    <span class="n">datastore_name</span><span class="o">=</span><span class="s2">&quot;&lt;datastore-name&gt;&quot;</span><span class="p">,</span>
-    <span class="n">container_name</span><span class="o">=</span><span class="s2">&quot;&lt;container-name&gt;&quot;</span><span class="p">,</span>
-    <span class="n">account_name</span><span class="o">=</span><span class="s2">&quot;&lt;account-name&gt;&quot;</span><span class="p">,</span>
-    <span class="n">sas_token</span><span class="o">=</span><span class="s2">&quot;&lt;sas-token&gt;&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<details class="note"><summary>Run IDs</summary><p>A unique <code>run_id</code> is automatically generated for each run.</p>
+</details>
+<p>There are multiple ways to create a run. For example:</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Interactive run</label><div class="tabbed-content">
+<p>Create interactive runs in an interactive scenario e.g. Jupyter notebooks.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Experiment</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>  <span class="c1"># get or create experiment</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">start_logging</span><span class="p">()</span>                  <span class="c1"># start interactive run</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">()</span>                     <span class="c1"># make some calculation</span>
+<span class="n">run</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>                  <span class="c1"># log the results to the run</span>
+<span class="n">run</span><span class="o">.</span><span class="n">complete</span><span class="p">()</span>                             <span class="c1"># stop the interactive run</span>
 </code></pre></div>
 
-<p><em><a href="vs-code-snippets/snippets#register-azure-blob-container-from-sas">VS Code snippet</a></em></p>
-<p>For more authentication options and for different underlying storage see
-the AML documentation on
-<a href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py">Datastores</a>.</p>
-<h4 id="compute-targets"><a href="more/compute-targets/">Compute Targets</a></h4>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">From configuration</label><div class="tabbed-content">
+<p>To submit a run asynchronously - either to local compute or to cloud
+compute - define a configuration. See
+"<a href="#running-scripts-in-aml">Running Scripts in AML</a>" for details.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Experiment</span>
+<span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">ScriptRunConfig</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">ScriptRunConfig</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># provide code, compute, environments, etc.</span>
+<span class="n">run</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>    
+</code></pre></div>
+
+</div>
+</div>
+<h4 id="compute-target"><a href="more/compute-targets/">Compute Target</a></h4>
 <p>Compute targets are an AML abstraction around the concept of a compute resource.
-This can range from your local machine to an (auto-scaling) cluster of Azure VMs.</p>
+This can range from your local machine to a cluster of Azure VMs.</p>
 <p>To use an existing compute target:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">ComputeTarget</span>
 <span class="n">compute_target</span> <span class="o">=</span> <span class="n">ComputeTarget</span><span class="p">(</span><span class="n">workspace</span><span class="o">=</span><span class="n">ws</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&lt;compute-name&gt;&quot;</span><span class="p">)</span>
@@ -545,6 +558,99 @@ VMs,</p>
 </code></pre></div>
 
 <p>See the <a href="more/compute-targets/">Compute Targets</a> page for more examples.</p>
+<h4 id="environment"><a href="more/environment/">Environment</a></h4>
+<p>The <code>Environment</code> class is used to configure reproducable Python environments
+for use throughout AML. These environments are versioned and sharable.</p>
+<p><strong>Creating AML Environments.</strong></p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">From existing Conda environment</label><div class="tabbed-content">
+<p>Create an AML Environment from an existing local conda environment:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">from_existing_conda_environment</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&lt;aml-environment-name&gt;&quot;</span><span class="p">,</span>
+    <span class="n">conda_environment_name</span><span class="o">=</span><span class="s2">&quot;&lt;conda_environment_name&gt;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details><summary>Conda local environments</summary><p>To see your local Conda environments run</p>
+<div class="highlight"><pre><span></span><code>conda env list
+</code></pre></div>
+
+<p>For more information, see
+<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing environments</a>
+in the conda user guide.</p>
+</details>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">From Conda `env.yml` file</label><div class="tabbed-content">
+<p>Create an AML Environment from a conda <code>env.yml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="n">my_env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">from_conda_specification</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;environment-name&gt;&#39;</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;&lt;path-to-env.yml&gt;&#39;</span><span class="p">,</span>   <span class="c1"># relative paths are okay</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details><summary>Configure conda environments with <code>env.yml</code> files</summary><p>Conda environments can be specified by way of an <code>env.yml</code> file, e.g.</p>
+<div class="highlight"><pre><span></span><code>name: example
+dependencies:
+  - numpy
+  - pandas
+</code></pre></div>
+
+<p>For more information, see
+<a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing environments</a>
+in the conda user guide.</p>
+</details>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">From pip `requirements.txt` file</label><div class="tabbed-content">
+<p>To create an AML environment from a pip <code>requirement.txt</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">from_pip_specification</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;environment-name&gt;&#39;</span><span class="p">,</span>
+    <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;&lt;path-to-requirements.txt&gt;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<details><summary>Configure pip environments with <code>requirements.txt</code> files</summary><p>Requirements files are pip's way configuring Python environments. For more
+information, see
+<a href="https://pip.pypa.io/en/latest/user_guide/#requirements-files">Requirements file</a>
+in the pip user guide.</p>
+</details>
+</div>
+</div>
+<p><strong>Registering AML Environments.</strong></p>
+<p>To register this environment with the workspace</p>
+<div class="highlight"><pre><span></span><code><span class="n">env</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span> <span class="c1"># can be accessed by any user of the workspace</span>
+</code></pre></div>
+
+<p>To view all environments registered to a workspace</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="n">registered_environments</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="datastore"><a href="more/datastore/">Datastore</a></h4>
+<p>Each workspace comes with a default datastore.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">get_default_datastore</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Any datastore that is registered to workspace can be accessed by name.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Datastore</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">Datastore</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;name-of-registered-datastore&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>To register a store via a SAS token:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="n">Datastore</span><span class="o">.</span><span class="n">register_azure_blob_container</span><span class="p">(</span>
+    <span class="n">workspace</span><span class="o">=</span><span class="n">ws</span><span class="p">,</span>
+    <span class="n">datastore_name</span><span class="o">=</span><span class="s2">&quot;&lt;datastore-name&gt;&quot;</span><span class="p">,</span>
+    <span class="n">container_name</span><span class="o">=</span><span class="s2">&quot;&lt;container-name&gt;&quot;</span><span class="p">,</span>
+    <span class="n">account_name</span><span class="o">=</span><span class="s2">&quot;&lt;account-name&gt;&quot;</span><span class="p">,</span>
+    <span class="n">sas_token</span><span class="o">=</span><span class="s2">&quot;&lt;sas-token&gt;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p><em><a href="vs-code-snippets/snippets#register-azure-blob-container-from-sas">VS Code snippet</a></em></p>
+<p>For more ways authentication options and for different underlying storage see
+the AML documentation on
+<a href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py">Datastores</a>.</p>
 <h2 id="running-scripts-in-aml">Running Scripts in AML</h2>
 <p>To run code in AML you need to:</p>
 <ol>
@@ -570,7 +676,7 @@ target to run on and the Python environment to run in.</li>
 </code></pre></div>
 
 <p><strong>ScriptRunConfig:Command line arguments</strong></p>
-<p>Moreover, <code>script.py</code> may be set up to accept command line arguments</p>
+<p><code>script.py</code> may be set up to accept command line arguments, e.g.,</p>
 <div class="highlight"><pre><span></span><code>python script.py --argument <span class="m">42</span> --another_argument <span class="m">73</span>
 </code></pre></div>
 
@@ -578,7 +684,7 @@ target to run on and the Python environment to run in.</li>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">ScriptRunConfig</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">ScriptRunConfig</span><span class="p">(</span>
-    <span class="n">source_directory</span><span class="o">=</span><span class="s1">&#39;&lt;path/to/source_directory&gt;&#39;</span><span class="p">,</span>  <span class="c1"># relative paths okay</span>
+    <span class="n">source_directory</span><span class="o">=</span><span class="s1">&#39;&lt;path/to/source_directory&gt;&#39;</span><span class="p">,</span>
     <span class="n">script</span><span class="o">=</span><span class="s1">&#39;script.py&#39;</span><span class="p">,</span>
     <span class="n">arguments</span><span class="o">=</span><span class="p">[</span>
         <span class="s1">&#39;argument&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span>
@@ -598,72 +704,20 @@ target to run on and the Python environment to run in.</li>
 <p>See <a href="more/compute-targets/">Compute Targets</a> for creating and accessing
 AML ComputeTargets.</p>
 <p><strong>ScriptRunConfig: Environment</strong></p>
-<p>If your script requires a specific Python environment to run pass specify in
+<p>If your script requires a specific Python environment to run: specify in
 the <code>run_config</code> attribute:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
 <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s1">&#39;&lt;environment-name&gt;&#39;</span><span class="p">)</span>
 <span class="n">config</span><span class="o">.</span><span class="n">run_config</span><span class="o">.</span><span class="n">environment</span> <span class="o">=</span> <span class="n">env</span> <span class="c1"># of type azureml.core.Environment</span>
 </code></pre></div>
 
-<p>See <a href="more/environment/">Environment</a> for creating and accessing AML
-Environments.</p>
-<h4 id="experiments">Experiments</h4>
-<p>An experiment is used as an organizational principle, storing run history and
-tracking metrics.</p>
-<p>Get or create an experiment:</p>
+<p>See <a href="more/environment/">Environment</a> for managing AML Environments.</p>
+<p><strong>ScriptRunConfig: Submit</strong></p>
+<p>Submit this configuration to run as part of an Experiment.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Experiment</span>
-<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Use experiments to submit run configurations to AML.</p>
-<div class="highlight"><pre><span></span><code><span class="n">run</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="environments">Environments</h2>
-<h4 id="environment"><a href="more/environment/">Environment</a></h4>
-<p>We can use a Conda/pip to define AML environments. </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Conda (env.yml)</label><div class="tabbed-content">
-<p>Generate a Conda <code>env.yml</code>: first activate your Conda environment
-and then run:
-<div class="highlight"><pre><span></span><code>conda env <span class="nb">export</span> &gt; env.yml
-</code></pre></div></p>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">pip (requirements.txt)</label><div class="tabbed-content">
-<p>Generate a pip <code>requrements.txt</code> file: first activate your pip
-environment and then run:
-<div class="highlight"><pre><span></span><code>pip freeze &gt; requirements.txt
-</code></pre></div></p>
-</div>
-</div>
-<p>Create the AML environment</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Conda</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
-
-<span class="n">my_env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">from_conda_specification</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;environment-name&gt;&#39;</span><span class="p">,</span>
-    <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;&lt;path-to-env.yml&gt;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">pip</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
-
-<span class="n">my_env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">from_pip_specification</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;environment-name&gt;&#39;</span><span class="p">,</span>
-    <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;&lt;path-to-requirements.txt&gt;&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-
-</div>
-</div>
-<p>To register this environment with the workspace</p>
-<div class="highlight"><pre><span></span><code><span class="n">my_env</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
-</code></pre></div>
-
-<p>To view all environments registered to a workspace</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">azureml.core</span> <span class="kn">import</span> <span class="n">Environment</span>
-<span class="n">registered_environments</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="s2">&quot;&lt;experiment-name&gt;&quot;</span><span class="p">)</span>   <span class="c1"># get or create Experiment</span>
+<span class="n">run</span> <span class="o">=</span> <span class="n">exp</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>                    <span class="c1"># submit config to run in AML</span>
+<span class="c1"># returns Run object</span>
 </code></pre></div>
 
 <h2 id="logging">Logging</h2>
