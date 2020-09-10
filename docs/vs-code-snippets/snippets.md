@@ -1,6 +1,6 @@
 # VS Code Snippets
 
-We have compiled a collection of useful templates in the form of [VS code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets).
+We have compiled a collection of [VS code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) designed to make it easy to work with Azure ML.
 
 ![VS Code Snippets](vs-code-snippets-demo.gif)
 

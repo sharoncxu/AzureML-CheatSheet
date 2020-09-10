@@ -1,0 +1,9 @@
+{
+    "directory_name": "aml-src-script",
+    "script_name": "script",
+    "aml_experiment_name": "aml-src-experiment",
+    "subscription_id": "48bbc269-ce89-4f6f-9a12-c6f91fcb772d",
+    "resource_group": "",
+    "workspace_name": "",
+    "compute_target_name": "local"
+}

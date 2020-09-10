@@ -44,8 +44,8 @@
     "Register Azure Blob Container From SAS": {
         "prefix": ["datastore-register-blob-sas","reg-blob-sas"],
         "body": [
-            "ds = Datastore.register_azure_blob_container("
-            "    workspace='$1',"
+            "ds = Datastore.register_azure_blob_container(",
+            "    workspace='$1',",
             "    datastore_name='$2',",
             "    container_name='$3',",
             "    account_name='$4',",
@@ -66,5 +66,62 @@
             "cluster$0 = ComputeTarget.create(workspace=$9, name='$10', compute_config)"
         ],
         "description": "Create compute cluster with SSH enabled"
+    },
+
+    "AML Template Script Run Config": {
+        "prefix": ["aml-template-script"],
+        "body": [
+            "from azureml.core import Workspace, Experiment, ScriptRunConfig",
+            "",
+            "# get workspace",
+            "ws = Workspace.from_config()",
+            "",
+            "#  get/create experiment",
+            "exp = Experiment(ws, '$1')",
+            "",
+            "# set up script run configuration",
+            "config = ScriptRunConfig(",
+            "    source_directory='.',",
+            "    script='$2.py',",
+            "    #arguments=['--meaning', 42],",
+            ")",
+            "",
+            "# submit script to AML",
+            "run = exp.submit(config)",
+            "print(run.get_portal_url()) # link to ml.azure.com",
+            "$0"
+        ],
+        "description": "Template for control plane to launch script on AML"
+    },
+
+    "AML Template Estimator": {
+        "prefix": ["aml-template-estimator"],
+        "body": [
+            "from azureml.core import Workspace, Experiment, ComputeTarget",
+            "from azureml.train.estimator import Estimator",
+            "",
+            "# get workspace",
+            "ws = Workspace.from_config()",
+            "",
+            "#  get/create experiment",
+            "exp = Experiment(ws, '$1')",
+            "",
+            "# define compute target",
+            "compute_target = ComputeTarget(ws, '$2')"
+            "",
+            "# set up script run configuration",
+            "config = Estimator(",
+            "    source_directory='.',",
+            "    entry_script='$3.py',",
+            "    compute_target=compute_target,",
+            "    #script_params={'--meaning': 42},",
+            ")",
+            "",
+            "# submit script to AML",
+            "run = exp.submit(config)",
+            "print(run.get_portal_url()) # link to ml.azure.com",
+            "$0"
+        ],
+        "description": "Template for control plane to launch estimator on AML"
     }
 }

@@ -6,8 +6,9 @@ theme:
     favicon: more/aml.Default
 
 nav:
-    - Home: index.md
+    - Cheatsheet: index.md
     - VS Code Snippets: vs-code-snippets/snippets.md
+    - Templates: templates.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
