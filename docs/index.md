@@ -1,54 +1,180 @@
 # Azure ML Cheat Sheet
 
-## AML Assets
+## Basic Objects
 
-#### [Workspace](more/workspace.md)
+### [Workspace](more/workspace.md)
 
-Instantiate `Workspace` object used to connect to your AML assets.
+#### Creating a new Workspace
+
+1. To create a new `Workspace`:
+    ```python
+    from azureml.core import Workspace
+    ws = Workspace.create(
+        name='<my-workspace-name>',
+        resource_group='<my-resource-group>',
+        subscription_id='<azure-subscription-id>',
+        location='<azure-region>',                  # e.g. 'eastus2'
+        create_resource_group=<True/False>,         # default:True
+        sku='basic/enterprise',                     # default:'basic'
+        exists_ok=<True/False>,                     # default:False
+    )
+    ```
+
+    ??? "Supported Azure Regions"
+        See list of supported Azure regions [here](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service)
+
+2. Write the workspace Azure Resource Manager (ARM) properties to a config file:
+
+    ```python
+    ws.write_config(path='.azureml', file_name='config.json')
+    ```
+
+    Workspace ARM properties can be loaded later using `from_config()` method.
+    The `path` defaults to '.azureml/' and the `file_name` defaults to
+    'config.json'.
+
+#### Instantiate a Workspace
+
+1.  Instantiate a workspace with the explicit Azure Resource Manager (ARM) properties:
+
+    ```python
+    from azureml.core import Workspace
+    ws = Workspace.get(
+        subscription_id='<subscription-id>',
+        resource_group='<resource-group>',
+        workspace_name='<workspace-name>',
+    )
+    ```
+
+2. Instantiate a workspace from config file:
+
+    ```python
+    from azureml.core import Workspace
+    ws = Workspace.from_config(path='.azureml')
+    # read your aml credentials from config.json and instantiate
+    # Workspace object
+    ```
+
+    !!! danger "`from_config` search path"
+        By default, `from_config()` will search for a file named `config.json` in
+        the current and parent directories and in any directory named `.azureml`
+        therein. Otherwise the `path` and `_file_name` need to be provided.
+
+#### Delete a Workspace
+
+To delete an Azure Machine Learning workspace:
 
 ```python
-from azureml.core import Workspace
-ws = Workspace(
-    subscription_id="<subscription_id>",
-    resource_group="<resource_group>",
-    workspace_name="<workspace_name>",
-)
+ws.delete(
+    delete_dependent_resources=False,   # delete all resources associated to the ws
+    no_wait=False,                      # whether to wait for the deletion to complete
+    )
 ```
 
-For convenience store your credentials in a `config.json`:
+!!! tip "Workspaces"
+    Workspaces are a foundational object used throughout AML and are used in the
+    constructors of many other classes. In the following examples we frequently
+    omit the workspace object instantiation and simply refer to `ws`.
 
-```python
-from azureml.core import Workspace
-ws.write_config()
-# write config.json file with your AML credentials
+    See the [workspaces](more/workspace.md) page for more ways to instantiate a
+    workspace.
 
-ws = Workspace.from_config()
-# read your aml credentials from config.json and instantiate
-# Workspace object
-```
-
-_[VS Code snippet](vs-code-snippets/snippets#create-aml-workspace-from-config)_
-
-Workspaces are a foundational object used throughout AML and are used in the
-constructors of many other classes. In the following examples we frequently
-omit the workspace object instantiation and simply refer to `ws`.
-
-See the [workspaces](more/workspace.md) page for more ways to instantiate a
-workspace.
-
-#### Experiment
+### Experiment
 
 An experiment is used as an organizational principle, storing run history and
 tracking metrics.
 
-Get or create an experiment:
+#### Get all experiments within a workspace
 
 ```python
 from azureml.core import Experiment
-exp = Experiment(ws, "<experiment-name>")
+experiments = Experiment.list(ws, tags=None)
+# return list[Experiment]
 ```
 
-#### Run
+#### Get or create an experiment
+
+```python
+from azureml.core import Experiment
+exp = Experiment(ws, '<experiment-name>')
+```
+
+If the experiment is not found in the workspace, a new experiment is created.
+
+!!! danger "Experiment names"
+    Experiment name must be 3-36 characters, start with a letter or a number, and can only contain letters, numbers, underscores, and dashes.
+
+#### Manage experiments
+
+1. Archive an experiment:
+
+    ```python
+    exp.archive()
+    ```
+
+2. Reactivate an experiment:
+
+    ```python
+    exp.reactivate()
+    ```
+
+3. Rename an experiment:
+
+    ```python
+    exp = Experiment(ws, name='<exp-name>')
+    exp.archive()
+    exp.reactivate(new_name='<new-name>')
+    ```
+
+#### Get all runs within an experiment
+
+1.  Get a generator of all the runs contained in an experiment:
+
+    ```python
+    exp.get_runs()
+    # return list[Run]
+    ```
+
+2. Get only runs of a certain type or with certain tags:
+
+    ```python
+    exp.get_runs(type='hyperdrive', tags={'modifiedBy': 'Master CI'})
+    # return list[Run]
+    ```
+
+    ??? "Run types"
+        Run type (str) indicates how the run was created. Examples include 'hyperdrive'
+        or 'azureml.scriptrun', but can be extended with custom types.
+
+3. Get run include child runs:
+
+    ```python
+    exp.get_runs(include_children=True)
+    # return list[Run]
+    ```
+
+#### Tag an experiment
+
+Tags on an experiment are stored in a dictionary with string keys and string values.
+
+1. Tag an experiment:
+
+    ```python
+    exp.tag('')
+    exp.tag('DeploymentCandidate')
+    exp.tag('modifiedBy', 'Master CI')
+    exp.tag('modifiedBy', 'release pipeline') # careful, tags are mutable
+    ```
+
+    OR:
+
+    ```python
+    # add a set of tags by providing Dict[str,str]
+    exp.set_tags({'modifiedBy': 'Master CI', 'area': 'nlp'})
+    ```
+
+
+### Run
 
 A run represents a single trial of an experiment.
 
@@ -56,18 +182,11 @@ Runs are used to monitor the asynchronous execution of a trial, log metrics and
 store output of the trial, and to analyze results and access artifacts
 generated by the trial.
 
-To get all the runs associated with a given experiment.
-
-```python
-from azureml.core import Experiment, Run
-exp = Experiment(ws, "<experiment-name>")
-runs = exp.get_runs()
-# generator of the runs in reverse chronological order
-```
-
 ??? note "Run IDs"
 
     A unique `run_id` is automatically generated for each run.
+
+#### Create a run
 
 There are multiple ways to create a run. For example:
 
@@ -80,10 +199,13 @@ There are multiple ways to create a run. For example:
     exp = Experiment(ws, "<experiment-name>")  # get or create experiment
     
     run = exp.start_logging()                  # start interactive run
-    result = my_function()                     # make some calculation
+    result = my_function()                     # do some things...
     run.log('result', result)                  # log the results to the run
     run.complete()                             # stop the interactive run
     ```
+
+    ??? "Logging"
+        See [Logging](#logging).
 
 === "From configuration"
 
@@ -100,20 +222,97 @@ There are multiple ways to create a run. For example:
     run = exp.submit(config)    
     ```
 
-#### [Compute Target](more/compute-targets.md)
+    ??? "ScriptRunConfig"
+        See [Running Scripts in AML](#running-scripts-in-aml).
+
+#### Get list of runs
+
+1. List of runs within an experiment:
+
+    ```python
+    from azureml.core import Experiment
+    from azureml.core import Run
+    exp = Experiment(ws, name='<experiment-name>')
+    runs = Run.list(exp)
+    # return Generator[Run]
+    ```
+
+2. List of runs within a compute target:
+
+    ```python
+    from azureml.core import ComputeTarget
+    from azureml.core import Run
+    target = ComputeTarget(ws, name='<target-name>')
+    runs_on_target = Run.list_by_compute(target)
+    # return Generator[Run]
+    ```
+
+3. Filtered list of runs:
+
+    ```python
+    from azureml.core import Run
+    type_ = 'hyperdrive'
+    tags = {'area': 'nlp'}
+    status = 'Completed'
+
+    runs = Run.list(exp, type=type_, tags=tags, status=status)
+    # return Generator[Run]
+    ```
+
+    ??? "Run types"
+        Run type (str) indicates how the run was created. Examples include 'hyperdrive'
+        or 'azureml.scriptrun', but can be extended with custom types.
+
+
+#### Managing runs
+
+1. Get run status:
+
+    ```python
+    run.get_status()
+    ```
+
+2. Cancel a run:
+
+    ```python
+    run.cancel()
+    ```
+
+3. Mark run as failed:
+
+    ```python
+    run.fail(error_details='userError') # error details can be str
+    run.fail(error_details=TypeError)   # or BaseException
+    ```
+
+#### Get run details
+
+Get the definition, status information, current log files, and other details of the run.
+
+```python
+run.get_details()
+# return dict[str, str]
+```
+
+Keys: `runId`, `target`, `status`, `startTimeUtc`, `endTimeUtc`, `properties`, `datasets`,
+`logfiles`. For more details see the [method signature](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-details--).
+
+### [Compute Target](more/compute-targets.md)
 
 Compute targets are an AML abstraction around the concept of a compute resource.
 This can range from your local machine to a cluster of Azure VMs.
 
-To use an existing compute target:
+#### Use an existing compute target
 
 ```python
 from azureml.core import ComputeTarget
 compute_target = ComputeTarget(workspace=ws, name="<compute-name>")
 ```
 
+#### Create a compute target
+
 For example, to create a new cluster of between 0 and 4 "Standard_NC24rs_v3"
-VMs,
+VMs:
 
 ```python
 from azureml.core import ComputeTarget
@@ -129,7 +328,7 @@ compute_target.wait_for_completion(show_output=True)
 
 See the [Compute Targets](more/compute-targets.md) page for more examples.
 
-#### [Environment](more/environment.md)
+### [Environment](more/environment.md)
 
 The `Environment` class is used to configure reproducable Python environments
 for use throughout AML. These environments are versioned and sharable.
@@ -219,38 +418,60 @@ from azureml.core import Environment
 registered_environments = Environment.list(ws)
 ```
 
-#### [Datastore](more/datastore.md)
+## Working with data in AzureML
 
-Each workspace comes with a default datastore.
+### [Datastore](more/datastore.md)
 
-```python
-ds = ws.get_default_datastore()
-```
+#### Get datastore
 
-Any datastore that is registered to workspace can be accessed by name.
+1. Each workspace comes with a default datastore.
 
-```python
-from azureml.core import Datastore
-ds = Datastore.get(ws, "<name-of-registered-datastore>")
-```
+    ```python
+    ds = ws.get_default_datastore()
+    ```
 
-To register a store via a SAS token:
+2. Any datastore that is registered to workspace can be accessed by name.
 
-```python
-ds = Datastore.register_azure_blob_container(
-    workspace=ws,
-    datastore_name="<datastore-name>",
-    container_name="<container-name>",
-    account_name="<account-name>",
-    sas_token="<sas-token>",
-)
-```
+    ```python
+    from azureml.core import Datastore
+    ds = Datastore.get(ws, "<name-of-registered-datastore>")
+    ```
 
-_[VS Code snippet](vs-code-snippets/snippets#register-azure-blob-container-from-sas)_
+#### Register a datastore
+
+1. Register a datastore via a SAS token.
+
+    ```python
+    ds = Datastore.register_azure_blob_container(
+        workspace=ws,
+        datastore_name="<datastore-name>",
+        container_name="<container-name>",
+        account_name="<account-name>",
+        sas_token="<sas-token>",
+    )
+    ```
 
 For more ways authentication options and for different underlying storage see
 the AML documentation on
 [Datastores](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py).
+
+### Dataset
+
+A Dataset is a reference to data in a Datastore or behind public web urls.
+
+#### Create a dataset
+
+```python
+from azureml.core import Dataset
+dataset = Dataset.Tabular.from_delimited_files(path = [(datastore, 'train-dataset/tabular/iris.csv')])
+```
+
+#### Preview a dataset
+
+```python
+# preview the first 3 rows of the dataset
+dataset.take(3).to_pandas_dataframe()
+```
 
 
 ## Running Scripts in AML
@@ -261,7 +482,7 @@ To run code in AML you need to:
 target to run on and the Python environment to run in.
 2. **Submit**: Create or reuse an AML Experiment and submit the run.
 
-#### ScriptRunConfig
+### ScriptRunConfig
 
 A typical directory may have the following structure:
 
@@ -347,7 +568,7 @@ run = exp.submit(config)                    # submit config to run in AML
 
 ## Logging
 
-#### Logging metrics
+### Logging metrics
 
 To log metrics in your running script add the following:
 
@@ -357,7 +578,7 @@ run = Run.get_context()
 run.log("metric-name", metric_value)
 ```
 
-#### Viewing metrics with the Python SDK
+### Viewing metrics with the Python SDK
 
 Viewing metrics in a run
 

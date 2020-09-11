@@ -16,6 +16,7 @@ extra_javascript:
 markdown_extensions:
     - mdx_math
     - codehilite
+    - admonition
     - pymdownx.arithmatex
     - pymdownx.betterem:
         smart_enable: all
