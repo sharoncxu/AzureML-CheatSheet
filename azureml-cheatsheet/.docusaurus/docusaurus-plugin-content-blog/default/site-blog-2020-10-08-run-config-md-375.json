@@ -1,0 +1,20 @@
+{
+  "permalink": "/azureml-cheatsheet/blog/run-config",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/blog/blog/2020-10-08-run-config.md",
+  "source": "@site/blog/2020-10-08-run-config.md",
+  "description": "What is a RunConfiguration?  In practice you should never have to build one by hand.",
+  "date": "2020-10-08T00:00:00.000Z",
+  "tags": [
+    {
+      "label": "run",
+      "permalink": "/azureml-cheatsheet/blog/tags/run"
+    }
+  ],
+  "title": "What is a Run Configuration?",
+  "readingTime": 0.66,
+  "truncated": true,
+  "prevItem": {
+    "title": "What is Run History?",
+    "permalink": "/azureml-cheatsheet/blog/run-history"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "unversionedId": "templates",
+  "id": "templates",
+  "isDocsHomePage": false,
+  "title": "templates",
+  "description": "Templates",
+  "source": "@site/docs/templates.md",
+  "slug": "/templates",
+  "permalink": "/azureml-cheatsheet/docs/next/templates",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/templates.md",
+  "version": "current"
+}

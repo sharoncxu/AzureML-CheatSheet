@@ -1,0 +1,20 @@
+{
+  "unversionedId": "train-cloud",
+  "id": "train-cloud",
+  "isDocsHomePage": false,
+  "title": "Running Code in the Cloud",
+  "source": "@site/docs/running-code-in-the-cloud.md",
+  "slug": "/train-cloud",
+  "permalink": "/azureml-cheatsheet/docs/next/train-cloud",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/running-code-in-the-cloud.md",
+  "version": "current",
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Environment",
+    "permalink": "/azureml-cheatsheet/docs/next/environment"
+  },
+  "next": {
+    "title": "Azure ML Docker Build",
+    "permalink": "/azureml-cheatsheet/docs/next/docker-build"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "unversionedId": "distributed-training",
+  "id": "distributed-training",
+  "isDocsHomePage": false,
+  "title": "Distributed Training",
+  "description": "TODO",
+  "source": "@site/docs/distributed-training.md",
+  "slug": "/distributed-training",
+  "permalink": "/azureml-cheatsheet/docs/next/distributed-training",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/distributed-training.md",
+  "version": "current",
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Azure ML Docker Build",
+    "permalink": "/azureml-cheatsheet/docs/next/docker-build"
+  }
+}

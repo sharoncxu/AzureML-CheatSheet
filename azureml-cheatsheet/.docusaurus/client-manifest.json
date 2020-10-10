@@ -1,0 +1,699 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "1": [
+      0,
+      2,
+      3,
+      4,
+      8,
+      21,
+      28,
+      37,
+      39,
+      49,
+      50,
+      1
+    ],
+    "2": [
+      0,
+      1,
+      3,
+      4,
+      21,
+      28,
+      37,
+      39,
+      49,
+      50,
+      2
+    ],
+    "3": [
+      0,
+      1,
+      2,
+      21,
+      28,
+      39,
+      3
+    ],
+    "styles": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      21,
+      28,
+      37,
+      39,
+      47,
+      48,
+      49,
+      50,
+      0
+    ],
+    "@theme/BlogTagsListPage": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "@site/versioned_docs/version-1.15.0/cheatsheet.md": [
+      5
+    ],
+    "@site/docs/compute-targets.md": [
+      6
+    ],
+    "@site/docs/environment.md": [
+      7
+    ],
+    "@theme/DocItem": [
+      0,
+      1,
+      8
+    ],
+    "@site/versioned_docs/version-1.15.0/templates.md": [
+      9
+    ],
+    "@site/docs/workspace.md": [
+      10
+    ],
+    "@site/docs/docker-build.md": [
+      11
+    ],
+    "@site/blog/2020-10-08-run-config.md": [
+      12
+    ],
+    "@site/docs/run-history.md": [
+      13
+    ],
+    "@site/docs/installation.md": [
+      14
+    ],
+    "@site/docs/running-code-interactively.md": [
+      15
+    ],
+    "@site/docs/templates.md": [
+      16
+    ],
+    "@site/versioned_docs/version-1.15.0/distributed-training.md": [
+      17
+    ],
+    "@site/versioned_docs/version-1.15.0/run-history.md": [
+      18
+    ],
+    "~blog/default/azureml-cheatsheet-blog-tags-tags-5ce.json": [
+      19
+    ],
+    "@site/versioned_docs/version-1.15.0/installation.md": [
+      20
+    ],
+    "@theme/BlogTagsPostsPage": [
+      0,
+      1,
+      2,
+      3,
+      21
+    ],
+    "@site/versioned_docs/version-1.15.0/docker-build.md": [
+      22
+    ],
+    "@site/docs/cheatsheet.md": [
+      23
+    ],
+    "~docs/default/version-current-metadata-prop-751.json": [
+      24
+    ],
+    "@site/blog/2020-10-08-run-config.md?truncated=true": [
+      25
+    ],
+    "@site/versioned_docs/version-1.15.0/vs-code-snippets/snippets.md": [
+      26
+    ],
+    "@site/blog/2020-10-09-run-history.md": [
+      27
+    ],
+    "@theme/BlogListPage": [
+      0,
+      1,
+      2,
+      3,
+      28
+    ],
+    "@site/blog/2020-10-09-run-history.md?truncated=true": [
+      29
+    ],
+    "~docs/default/version-1-15-0-metadata-prop-104.json": [
+      30
+    ],
+    "@site/versioned_docs/version-1.15.0/custom-docker.md": [
+      31
+    ],
+    "@site/docs/script-run-config.md": [
+      32
+    ],
+    "@site/docs/custom-docker.md": [
+      33
+    ],
+    "@site/docs/running-code-in-the-cloud.md": [
+      34
+    ],
+    "@site/docs/vs-code-snippets/snippets.md": [
+      35
+    ],
+    "~blog/default/azureml-cheatsheet-blog-273.json": [
+      36
+    ],
+    "@site/src/pages/index.js": [
+      0,
+      1,
+      2,
+      37
+    ],
+    "~blog/default/azureml-cheatsheet-blog-tags-run-e22.json": [
+      38
+    ],
+    "@theme/BlogPostPage": [
+      0,
+      1,
+      2,
+      3,
+      39
+    ],
+    "@site/versioned_docs/version-1.15.0/running-code-interactively.md": [
+      40
+    ],
+    "@site/versioned_docs/version-1.15.0/running-code-in-the-cloud.md": [
+      41
+    ],
+    "@site/versioned_docs/version-1.15.0/script-run-config.md": [
+      42
+    ],
+    "@site/versioned_docs/version-1.15.0/compute-targets.md": [
+      43
+    ],
+    "@site/versioned_docs/version-1.15.0/workspace.md": [
+      44
+    ],
+    "@site/versioned_docs/version-1.15.0/environment.md": [
+      45
+    ],
+    "@site/docs/distributed-training.md": [
+      46
+    ],
+    "@generated/docusaurus.config": [
+      0,
+      48,
+      47
+    ],
+    "main": [
+      0,
+      48,
+      47
+    ],
+    "runtime~main": [
+      0,
+      47,
+      48
+    ],
+    "@theme/DocPage": [
+      0,
+      1,
+      2,
+      50
+    ],
+    "@theme/NotFound": [
+      0,
+      1,
+      2,
+      50
+    ]
+  },
+  "assets": {
+    "0": {
+      "css": [
+        {
+          "file": "styles.a0456608.css",
+          "hash": "56c3cd875f49359dc698",
+          "publicPath": "/azureml-cheatsheet/styles.a0456608.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "styles.2f06ed09.js",
+          "hash": "56c3cd875f49359dc698",
+          "publicPath": "/azureml-cheatsheet/styles.2f06ed09.js"
+        }
+      ]
+    },
+    "1": {
+      "js": [
+        {
+          "file": "1.90864182.js",
+          "hash": "e8154d70f463902e4306",
+          "publicPath": "/azureml-cheatsheet/1.90864182.js"
+        }
+      ]
+    },
+    "2": {
+      "js": [
+        {
+          "file": "2.4d1ded7d.js",
+          "hash": "a369de31a78a53229131",
+          "publicPath": "/azureml-cheatsheet/2.4d1ded7d.js"
+        }
+      ]
+    },
+    "3": {
+      "js": [
+        {
+          "file": "3.6fdfffdd.js",
+          "hash": "13a87238fdc7b4b700a0",
+          "publicPath": "/azureml-cheatsheet/3.6fdfffdd.js"
+        }
+      ]
+    },
+    "4": {
+      "js": [
+        {
+          "file": "01a85c17.3af3b65c.js",
+          "hash": "3c857eaaeb2ce6e89823",
+          "publicPath": "/azureml-cheatsheet/01a85c17.3af3b65c.js"
+        }
+      ]
+    },
+    "5": {
+      "js": [
+        {
+          "file": "0b1b29db.3d10a54f.js",
+          "hash": "6f6887e7b7d8b50eeda8",
+          "publicPath": "/azureml-cheatsheet/0b1b29db.3d10a54f.js"
+        }
+      ]
+    },
+    "6": {
+      "js": [
+        {
+          "file": "121b91a4.e83cc8b1.js",
+          "hash": "dd12ce3e620051d896de",
+          "publicPath": "/azureml-cheatsheet/121b91a4.e83cc8b1.js"
+        }
+      ]
+    },
+    "7": {
+      "js": [
+        {
+          "file": "177b04f3.2386decf.js",
+          "hash": "51a95047079bbeaf901c",
+          "publicPath": "/azureml-cheatsheet/177b04f3.2386decf.js"
+        }
+      ]
+    },
+    "8": {
+      "js": [
+        {
+          "file": "17896441.f9dfcdc4.js",
+          "hash": "bad04d6c85c43c4849de",
+          "publicPath": "/azureml-cheatsheet/17896441.f9dfcdc4.js"
+        }
+      ]
+    },
+    "9": {
+      "js": [
+        {
+          "file": "1b473889.48210905.js",
+          "hash": "478bf3c9580b7aa3595b",
+          "publicPath": "/azureml-cheatsheet/1b473889.48210905.js"
+        }
+      ]
+    },
+    "10": {
+      "js": [
+        {
+          "file": "299845f0.e5d3048e.js",
+          "hash": "0596dff8d12e616dc9c8",
+          "publicPath": "/azureml-cheatsheet/299845f0.e5d3048e.js"
+        }
+      ]
+    },
+    "11": {
+      "js": [
+        {
+          "file": "3361b6c1.4a9ec6bd.js",
+          "hash": "52e86bca53ba4cbaa57e",
+          "publicPath": "/azureml-cheatsheet/3361b6c1.4a9ec6bd.js"
+        }
+      ]
+    },
+    "12": {
+      "js": [
+        {
+          "file": "3755801c.5c20890e.js",
+          "hash": "cae3692c5f09b2638fff",
+          "publicPath": "/azureml-cheatsheet/3755801c.5c20890e.js"
+        }
+      ]
+    },
+    "13": {
+      "js": [
+        {
+          "file": "3a02f10e.09210d85.js",
+          "hash": "39dac3ab083157d36609",
+          "publicPath": "/azureml-cheatsheet/3a02f10e.09210d85.js"
+        }
+      ]
+    },
+    "14": {
+      "js": [
+        {
+          "file": "3b8c55ea.da955fe7.js",
+          "hash": "90f6a96c903902b27e36",
+          "publicPath": "/azureml-cheatsheet/3b8c55ea.da955fe7.js"
+        }
+      ]
+    },
+    "15": {
+      "js": [
+        {
+          "file": "3bbcad69.1254ebe0.js",
+          "hash": "9a82ea261dc711939e95",
+          "publicPath": "/azureml-cheatsheet/3bbcad69.1254ebe0.js"
+        }
+      ]
+    },
+    "16": {
+      "js": [
+        {
+          "file": "4e9ca076.b99a9495.js",
+          "hash": "cdc13498c61c44756f39",
+          "publicPath": "/azureml-cheatsheet/4e9ca076.b99a9495.js"
+        }
+      ]
+    },
+    "17": {
+      "js": [
+        {
+          "file": "54292d1d.678b86a1.js",
+          "hash": "d87c72eb418e17619181",
+          "publicPath": "/azureml-cheatsheet/54292d1d.678b86a1.js"
+        }
+      ]
+    },
+    "18": {
+      "js": [
+        {
+          "file": "5a3ba28c.759463ed.js",
+          "hash": "91ef1ca7fae02214ed04",
+          "publicPath": "/azureml-cheatsheet/5a3ba28c.759463ed.js"
+        }
+      ]
+    },
+    "19": {
+      "js": [
+        {
+          "file": "5a513dd7.474ab84d.js",
+          "hash": "b7606fdffa4b1a479350",
+          "publicPath": "/azureml-cheatsheet/5a513dd7.474ab84d.js"
+        }
+      ]
+    },
+    "20": {
+      "js": [
+        {
+          "file": "62cd3fe2.d026278b.js",
+          "hash": "cdd6d5de11bfbadbfd1f",
+          "publicPath": "/azureml-cheatsheet/62cd3fe2.d026278b.js"
+        }
+      ]
+    },
+    "21": {
+      "js": [
+        {
+          "file": "6875c492.682ea350.js",
+          "hash": "b96782104ddf2647de9b",
+          "publicPath": "/azureml-cheatsheet/6875c492.682ea350.js"
+        }
+      ]
+    },
+    "22": {
+      "js": [
+        {
+          "file": "819d9837.52d4bdc0.js",
+          "hash": "dff6d6dfd66514a2a1f5",
+          "publicPath": "/azureml-cheatsheet/819d9837.52d4bdc0.js"
+        }
+      ]
+    },
+    "23": {
+      "js": [
+        {
+          "file": "85175863.8df4914c.js",
+          "hash": "3ffc08fe8a043c05cd71",
+          "publicPath": "/azureml-cheatsheet/85175863.8df4914c.js"
+        }
+      ]
+    },
+    "24": {
+      "js": [
+        {
+          "file": "935f2afb.85ff1b3d.js",
+          "hash": "750e6891c49e53f167f7",
+          "publicPath": "/azureml-cheatsheet/935f2afb.85ff1b3d.js"
+        }
+      ]
+    },
+    "25": {
+      "js": [
+        {
+          "file": "9c1fdd96.2961b9e4.js",
+          "hash": "5011a7b0c5ed81247c8f",
+          "publicPath": "/azureml-cheatsheet/9c1fdd96.2961b9e4.js"
+        }
+      ]
+    },
+    "26": {
+      "js": [
+        {
+          "file": "9e1b8dea.73d5d0b6.js",
+          "hash": "a9889a886830371e1baa",
+          "publicPath": "/azureml-cheatsheet/9e1b8dea.73d5d0b6.js"
+        }
+      ]
+    },
+    "27": {
+      "js": [
+        {
+          "file": "a61d8aec.3975dd58.js",
+          "hash": "e35b206cfa8c186a8f16",
+          "publicPath": "/azureml-cheatsheet/a61d8aec.3975dd58.js"
+        }
+      ]
+    },
+    "28": {
+      "js": [
+        {
+          "file": "a6aa9e1f.4a204153.js",
+          "hash": "0ba01f34ad396880fb4b",
+          "publicPath": "/azureml-cheatsheet/a6aa9e1f.4a204153.js"
+        }
+      ]
+    },
+    "29": {
+      "js": [
+        {
+          "file": "aa534baf.80d4a29a.js",
+          "hash": "eed98c5ade9ede2c0ce1",
+          "publicPath": "/azureml-cheatsheet/aa534baf.80d4a29a.js"
+        }
+      ]
+    },
+    "30": {
+      "js": [
+        {
+          "file": "aefa263f.58f72c7f.js",
+          "hash": "16b0af65538cbcc6dac7",
+          "publicPath": "/azureml-cheatsheet/aefa263f.58f72c7f.js"
+        }
+      ]
+    },
+    "31": {
+      "js": [
+        {
+          "file": "b011acea.a531f407.js",
+          "hash": "7c851562a931def1762e",
+          "publicPath": "/azureml-cheatsheet/b011acea.a531f407.js"
+        }
+      ]
+    },
+    "32": {
+      "js": [
+        {
+          "file": "b28a9350.bfc25abc.js",
+          "hash": "0c199f9f55c65a4f0cae",
+          "publicPath": "/azureml-cheatsheet/b28a9350.bfc25abc.js"
+        }
+      ]
+    },
+    "33": {
+      "js": [
+        {
+          "file": "b6355daa.033074a4.js",
+          "hash": "3ccd943e6973ef40d150",
+          "publicPath": "/azureml-cheatsheet/b6355daa.033074a4.js"
+        }
+      ]
+    },
+    "34": {
+      "js": [
+        {
+          "file": "b8675723.9e622691.js",
+          "hash": "ec78e601ab1ce3a26c7d",
+          "publicPath": "/azureml-cheatsheet/b8675723.9e622691.js"
+        }
+      ]
+    },
+    "35": {
+      "js": [
+        {
+          "file": "be95c5bc.e5964898.js",
+          "hash": "221b23ded5bbbfca0326",
+          "publicPath": "/azureml-cheatsheet/be95c5bc.e5964898.js"
+        }
+      ]
+    },
+    "36": {
+      "js": [
+        {
+          "file": "be96a168.42c960c4.js",
+          "hash": "42def615f7135526f706",
+          "publicPath": "/azureml-cheatsheet/be96a168.42c960c4.js"
+        }
+      ]
+    },
+    "37": {
+      "js": [
+        {
+          "file": "c4f5d8e4.6cb8f49e.js",
+          "hash": "3ac3d8be1899465789eb",
+          "publicPath": "/azureml-cheatsheet/c4f5d8e4.6cb8f49e.js"
+        }
+      ]
+    },
+    "38": {
+      "js": [
+        {
+          "file": "c7041aca.cf771b43.js",
+          "hash": "7d7b59a64c87276a1d12",
+          "publicPath": "/azureml-cheatsheet/c7041aca.cf771b43.js"
+        }
+      ]
+    },
+    "39": {
+      "js": [
+        {
+          "file": "ccc49370.ecb5f579.js",
+          "hash": "6c3fd6e8c7b27a2da676",
+          "publicPath": "/azureml-cheatsheet/ccc49370.ecb5f579.js"
+        }
+      ]
+    },
+    "40": {
+      "js": [
+        {
+          "file": "d0d1b88b.067c3800.js",
+          "hash": "5e08eea635493e8baded",
+          "publicPath": "/azureml-cheatsheet/d0d1b88b.067c3800.js"
+        }
+      ]
+    },
+    "41": {
+      "js": [
+        {
+          "file": "d341f432.ac0852d8.js",
+          "hash": "e78e09ce1509923c83db",
+          "publicPath": "/azureml-cheatsheet/d341f432.ac0852d8.js"
+        }
+      ]
+    },
+    "42": {
+      "js": [
+        {
+          "file": "d860ff43.518958b5.js",
+          "hash": "e783df906b320562e94b",
+          "publicPath": "/azureml-cheatsheet/d860ff43.518958b5.js"
+        }
+      ]
+    },
+    "43": {
+      "js": [
+        {
+          "file": "ec233a0b.7a0c35d4.js",
+          "hash": "8511e834a7024eb99c43",
+          "publicPath": "/azureml-cheatsheet/ec233a0b.7a0c35d4.js"
+        }
+      ]
+    },
+    "44": {
+      "js": [
+        {
+          "file": "f8075ed7.cd4f2003.js",
+          "hash": "46062fbf6e4a1267672c",
+          "publicPath": "/azureml-cheatsheet/f8075ed7.cd4f2003.js"
+        }
+      ]
+    },
+    "45": {
+      "js": [
+        {
+          "file": "f9a6beda.ff7fd719.js",
+          "hash": "1d1af298c098224195fb",
+          "publicPath": "/azureml-cheatsheet/f9a6beda.ff7fd719.js"
+        }
+      ]
+    },
+    "46": {
+      "js": [
+        {
+          "file": "fbd56c93.39df8f71.js",
+          "hash": "c62844672139b16255f7",
+          "publicPath": "/azureml-cheatsheet/fbd56c93.39df8f71.js"
+        }
+      ]
+    },
+    "47": {
+      "js": [
+        {
+          "file": "main.87a9a6c1.js",
+          "hash": "cf491751408f394bcd80",
+          "publicPath": "/azureml-cheatsheet/main.87a9a6c1.js"
+        }
+      ]
+    },
+    "48": {
+      "js": [
+        {
+          "file": "runtime~main.69a8cb95.js",
+          "hash": "3989ea8ec50ceb2096bd",
+          "publicPath": "/azureml-cheatsheet/runtime~main.69a8cb95.js"
+        }
+      ]
+    },
+    "50": {
+      "js": [
+        {
+          "file": "49.4927912f.js",
+          "hash": "6983cb2cd40b424855f4",
+          "publicPath": "/azureml-cheatsheet/49.4927912f.js"
+        },
+        {
+          "file": "50.bcb39946.js",
+          "hash": "479c89f555257f60beae",
+          "publicPath": "/azureml-cheatsheet/50.bcb39946.js"
+        }
+      ]
+    }
+  }
+}

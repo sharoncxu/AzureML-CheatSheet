@@ -1,0 +1,21 @@
+{
+  "unversionedId": "workspace",
+  "id": "version-1.15.0/workspace",
+  "isDocsHomePage": false,
+  "title": "Workspace",
+  "description": "Workspaces are a foundational object used throughout Azure ML and are used in the",
+  "source": "@site/versioned_docs/version-1.15.0/workspace.md",
+  "slug": "/workspace",
+  "permalink": "/azureml-cheatsheet/docs/workspace",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/workspace.md",
+  "version": "1.15.0",
+  "sidebar": "version-1.15.0/someSidebar",
+  "previous": {
+    "title": "Cheat Sheet",
+    "permalink": "/azureml-cheatsheet/docs/cheatsheet"
+  },
+  "next": {
+    "title": "Compute Target",
+    "permalink": "/azureml-cheatsheet/docs/compute-targets"
+  }
+}

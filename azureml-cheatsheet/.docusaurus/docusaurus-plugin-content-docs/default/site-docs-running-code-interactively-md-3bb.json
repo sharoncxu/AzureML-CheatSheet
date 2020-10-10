@@ -1,0 +1,12 @@
+{
+  "unversionedId": "running-code-interactively",
+  "id": "running-code-interactively",
+  "isDocsHomePage": false,
+  "title": "running-code-interactively",
+  "description": "",
+  "source": "@site/docs/running-code-interactively.md",
+  "slug": "/running-code-interactively",
+  "permalink": "/azureml-cheatsheet/docs/next/running-code-interactively",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/running-code-interactively.md",
+  "version": "current"
+}

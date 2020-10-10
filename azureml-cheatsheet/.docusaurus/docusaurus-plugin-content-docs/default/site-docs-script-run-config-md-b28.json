@@ -1,0 +1,12 @@
+{
+  "unversionedId": "script-run-config",
+  "id": "script-run-config",
+  "isDocsHomePage": false,
+  "title": "Running code in the cloud",
+  "description": "ScriptRunConfig",
+  "source": "@site/docs/script-run-config.md",
+  "slug": "/script-run-config",
+  "permalink": "/azureml-cheatsheet/docs/next/script-run-config",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/script-run-config.md",
+  "version": "current"
+}

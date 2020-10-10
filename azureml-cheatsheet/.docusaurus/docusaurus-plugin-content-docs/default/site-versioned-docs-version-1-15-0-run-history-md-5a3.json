@@ -1,0 +1,12 @@
+{
+  "unversionedId": "run-history",
+  "id": "version-1.15.0/run-history",
+  "isDocsHomePage": false,
+  "title": "Run History",
+  "description": "Azure ML can supercharge your ML workloads in (at least!) two ways:",
+  "source": "@site/versioned_docs/version-1.15.0/run-history.md",
+  "slug": "/run-history",
+  "permalink": "/azureml-cheatsheet/docs/run-history",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/run-history.md",
+  "version": "1.15.0"
+}

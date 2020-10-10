@@ -1,0 +1,21 @@
+{
+  "unversionedId": "compute-targets",
+  "id": "compute-targets",
+  "isDocsHomePage": false,
+  "title": "Compute Target",
+  "description": "Compute targets are an AML abstraction around the concept of a compute resource.",
+  "source": "@site/docs/compute-targets.md",
+  "slug": "/compute-targets",
+  "permalink": "/azureml-cheatsheet/docs/next/compute-targets",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/compute-targets.md",
+  "version": "current",
+  "sidebar": "mainSidebar",
+  "previous": {
+    "title": "Workspace",
+    "permalink": "/azureml-cheatsheet/docs/next/workspace"
+  },
+  "next": {
+    "title": "Environment",
+    "permalink": "/azureml-cheatsheet/docs/next/environment"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "unversionedId": "train-cloud",
+  "id": "version-1.15.0/train-cloud",
+  "isDocsHomePage": false,
+  "title": "Running Code in the Cloud",
+  "source": "@site/versioned_docs/version-1.15.0/running-code-in-the-cloud.md",
+  "slug": "/train-cloud",
+  "permalink": "/azureml-cheatsheet/docs/train-cloud",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/running-code-in-the-cloud.md",
+  "version": "1.15.0"
+}

@@ -1,0 +1,17 @@
+{
+  "unversionedId": "installation",
+  "id": "version-1.15.0/installation",
+  "isDocsHomePage": false,
+  "title": "Installation",
+  "description": "Install the Azure ML Python SDK:",
+  "source": "@site/versioned_docs/version-1.15.0/installation.md",
+  "slug": "/installation",
+  "permalink": "/azureml-cheatsheet/docs/installation",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/installation.md",
+  "version": "1.15.0",
+  "sidebar": "version-1.15.0/someSidebar",
+  "next": {
+    "title": "Cheat Sheet",
+    "permalink": "/azureml-cheatsheet/docs/cheatsheet"
+  }
+}

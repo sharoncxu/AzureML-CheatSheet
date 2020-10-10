@@ -1,0 +1,21 @@
+{
+  "unversionedId": "docker-build",
+  "id": "version-1.15.0/docker-build",
+  "isDocsHomePage": false,
+  "title": "Azure ML Docker Build",
+  "description": "In this post we explain how Azure ML builds its docker image based on an Environment.",
+  "source": "@site/versioned_docs/version-1.15.0/docker-build.md",
+  "slug": "/docker-build",
+  "permalink": "/azureml-cheatsheet/docs/docker-build",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/docker-build.md",
+  "version": "1.15.0",
+  "sidebar": "version-1.15.0/someSidebar",
+  "previous": {
+    "title": "Running code in the cloud",
+    "permalink": "/azureml-cheatsheet/docs/script-run-config"
+  },
+  "next": {
+    "title": "Distributed Training",
+    "permalink": "/azureml-cheatsheet/docs/distributed-training"
+  }
+}

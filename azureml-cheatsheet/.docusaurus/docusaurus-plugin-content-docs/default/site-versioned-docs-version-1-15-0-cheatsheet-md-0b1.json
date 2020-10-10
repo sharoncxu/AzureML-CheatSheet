@@ -1,0 +1,21 @@
+{
+  "unversionedId": "cheatsheet",
+  "id": "version-1.15.0/cheatsheet",
+  "isDocsHomePage": false,
+  "title": "Cheat Sheet",
+  "description": "Basic setup",
+  "source": "@site/versioned_docs/version-1.15.0/cheatsheet.md",
+  "slug": "/cheatsheet",
+  "permalink": "/azureml-cheatsheet/docs/cheatsheet",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/versioned_docs/version-1.15.0/cheatsheet.md",
+  "version": "1.15.0",
+  "sidebar": "version-1.15.0/someSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/azureml-cheatsheet/docs/installation"
+  },
+  "next": {
+    "title": "Workspace",
+    "permalink": "/azureml-cheatsheet/docs/workspace"
+  }
+}
