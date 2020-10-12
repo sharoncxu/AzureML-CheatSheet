@@ -21,11 +21,11 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/cookbook',
+          to: 'docs/cbdocs/cookbook',
           label: 'Cookbook',
           position: 'left',
         },
-        {to: 'blog', label: 'Snippets', position: 'left'},
+        {to: 'docs/vs-code-snippets/snippets', label: 'Snippets', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/aminsaied',

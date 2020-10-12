@@ -9,7 +9,7 @@
 
 module.exports = {
   mainSidebar: {
-    docs: [
+    'Azure ML Cheat Sheet': [
       {
         type: 'category',
         label: 'Getting Started',
@@ -18,12 +18,19 @@ module.exports = {
       {
         type: 'category',
         label: 'Basic Assets',
-        items: ['workspace', 'compute-targets', 'environment'],
+        items: [
+          'workspace', 'compute-targets', 'environment',
+          {
+            type: 'category',
+            label: 'Data',
+            items: ['datastore', 'dataset']
+          }
+        ],
       },
       {
         type: 'category',
         label: 'Common Scenarios',
-        items: ['train-cloud'],
+        items: ['script-run-config', 'logging'],
       },
       {
         type: 'category',
@@ -31,11 +38,17 @@ module.exports = {
         items: ['docker-build', 'distributed-training'],
       },
     ],
-    cookbook: [
+  },
+  secondaySidebar: {
+    Cookbook: [
+      {
+        type: 'doc',
+        id: 'cbdocs/cookbook',
+      },
       {
         type: 'category',
-        label: 'Getting Started',
-        items: ['installation', 'cheatsheet'],
+        label: 'Setup',
+        items: ['cbdocs/setup-sdk', 'cbdocs/setup-notebook'],
       }
     ]
   }

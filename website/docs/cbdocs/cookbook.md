@@ -1,5 +1,5 @@
 ---
-title: Cookbook
+title: Getting Started
 id: cookbook
 ---
 
