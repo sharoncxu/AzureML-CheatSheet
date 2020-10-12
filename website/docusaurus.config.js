@@ -20,6 +20,7 @@ module.exports = {
           label: 'Cheat Sheet',
           position: 'left',
         },
+        {position: 'left', type: 'docsVersionDropdown'},
         {
           to: 'docs/cbdocs/cookbook',
           label: 'Cookbook',
