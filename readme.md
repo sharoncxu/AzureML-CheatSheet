@@ -1,6 +1,6 @@
 ## Contribution Guide
 
-- Install npm and yarn: see [docusaurus2 webpage]](https://v2.docusaurus.io/docs/installation)
+- Install npm and yarn: see [docusaurus2 webpage](https://v2.docusaurus.io/docs/installation)
 
 - Run local server while developing:
     - `cd website`
