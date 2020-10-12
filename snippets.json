@@ -69,14 +69,14 @@
     },
 
     "AML Template Script Run Config": {
-        "prefix": ["aml-template-script"],
+        "prefix": ["scr", "aml-template-script"],
         "body": [
             "from azureml.core import Workspace, Experiment, ScriptRunConfig",
             "",
             "# get workspace",
             "ws = Workspace.from_config()",
             "",
-            "#  get/create experiment",
+            "# get/create experiment",
             "exp = Experiment(ws, '$1')",
             "",
             "# set up script run configuration",
@@ -123,5 +123,69 @@
             "$0"
         ],
         "description": "Template for control plane to launch estimator on AML"
+    },
+
+    "Environment-From-Pip": {
+        "prefix": ["environment-from-pip"],
+        "body": [
+            "from azureml.core import Environment",
+            "env = Environment.from_pip_requirements(",
+            "    name='$1',",
+            "    file_path='$2',",
+            ")",
+            "",
+            "$0"
+        ],
+        "description": "Create AML Environment from pip requirements.txt"
+    },
+
+    "Environment-From-Conda-Spec": {
+        "prefix": ["environment-from-conda-spec"],
+        "body": [
+            "from azureml.core import Environment",
+            "env = Environment.from_conda_specification(",
+            "    name='$1',",
+            "    file_path='$2',",
+            ")",
+            "",
+            "$0"
+        ],
+        "description": "Create AML Environment from conda env.yml"
+    },
+
+    "Environment-From-Conda-Existing": {
+        "prefix": ["environment-from-conda-existing"],
+        "body": [
+            "from azureml.core import Environment",
+            "env = Environment.from_existing_conda_environment(",
+            "    name='$1',",
+            "    conda_environment_name='$2',",
+            ")",
+            "",
+            "$0"
+        ],
+        "description": "Create AML Environment from an existing Conda environment"
+    },
+
+    "Environment": {
+        "prefix": ["environment-from-sdk"],
+        "body": [
+            "from azureml.core import Environment",
+            "from azureml.core.conda_dependencies import CondaDependencies",
+            "env = Environment($1)",
+            "",
+            "conda = CondaDependencies()",
+            "",
+            "# add channels",
+            "conda.add_channel('$2')",
+            "",
+            "# add conda packages",
+            "conda.add_conda_package('$3')",
+            "",
+            "# add pip packages",
+            "conda.add_pip_package('$4')",
+            "$0"
+        ],
+        "description": "Create AML Environment using the SDK"
     }
 }
