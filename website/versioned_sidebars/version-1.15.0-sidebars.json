@@ -1,0 +1,82 @@
+{
+  "version-1.15.0/someSidebar": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.15.0/installation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.15.0/cheatsheet"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Basic Assets",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.15.0/workspace"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.15.0/compute-targets"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.15.0/environment"
+        },
+        {
+          "type": "category",
+          "label": "Data",
+          "items": [
+            {
+              "type": "doc", 
+              "id": "version-1.15.0/datastore"
+            },
+            {
+              "type": "doc", 
+              "id": "version-1.15.0/dataset"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Common Scenarios",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.15.0/script-run-config"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.15.0/upload-data"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Advanced Scenarios",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.15.0/docker-build"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.15.0/distributed-training"
+        }
+      ]
+    }
+  ]
+}
