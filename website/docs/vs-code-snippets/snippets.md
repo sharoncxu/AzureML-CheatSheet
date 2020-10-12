@@ -15,7 +15,7 @@ snippets" > Select `python.json`. All of these snippets are available here:
 
 ```json
 "Basic core imports": {
-        "prefix": "workspace-imports-creation",
+        "prefix": ["imports", "workspace-imports-creation"],
         "body": [
             "from azureml.core import Workspace, Experiment, Run, RunConfiguration, ComputeTarget$1",
             "$0"

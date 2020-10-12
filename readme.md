@@ -8,7 +8,9 @@
 - [ ] Add contributors guide
 - [ ] Add Alex's example of "setup" in dockerfile and download data
 - [ ] Clean up TODOs
-- [ ] Push to ghpages branch
+- [ ] Github
+    - [ ] Push to ghpages branch
+    - [ ] Push docusaursu branch to master
 
 ## Contribution Guide
 
