@@ -1,0 +1,118 @@
+{
+  "version-1.14.0/mainSidebar": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Azure ML Cheat Sheet",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Getting Started",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.14.0/installation"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/cheatsheet"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Basic Assets",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.14.0/workspace"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/compute-targets"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/environment"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Data",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "version-1.14.0/datastore"
+                },
+                {
+                  "type": "doc",
+                  "id": "version-1.14.0/dataset"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Common Scenarios",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.14.0/script-run-config"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/logging"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Advanced Scenarios",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.14.0/docker-build"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/distributed-training"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "version-1.14.0/secondaySidebar": [
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Cookbook",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.14.0/cbdocs/cookbook"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Setup",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-1.14.0/cbdocs/setup-sdk"
+            },
+            {
+              "type": "doc",
+              "id": "version-1.14.0/cbdocs/setup-notebook"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

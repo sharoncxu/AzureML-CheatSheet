@@ -5,7 +5,7 @@ title: Installation
 Install the Azure ML Python SDK:
 
 ```console
-pip install azureml-sdk
+pip install azureml-sdk==1.14.0
 ```
 
 ### Create Workspace
