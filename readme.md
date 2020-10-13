@@ -14,11 +14,13 @@
 
 ## Contribution Guide
 
-**TODO** Finish this guide!
+- Install npm (see [requirements](https://v2.docusaurus.io/docs/installation#requirements))
 
-- Install npm
+- Clone this repo
 
-- `cd website` + `yarn start`
+- (First time only) Install dependencies by running `yarn install` from within `website` directory. You should see a `node_modules` directory appear.
+
+- Start a local server with `yarn start` (again from within the `website` directory)
 
 - Deploy to GH Pages: https://v2.docusaurus.io/docs/deployment#deploying-to-github-pages
 
