@@ -20,7 +20,7 @@ that Azure provides.
 To register a store via a SAS token:
 
 ```python
-ddatastores = Datastore.register_azure_blob_container(
+datastores = Datastore.register_azure_blob_container(
     workspace=ws,
     datastore_name="<datastore-name>",
     container_name="<container-name>",
