@@ -9,11 +9,15 @@
 
 module.exports = {
   mainSidebar: {
-    'Azure ML Cheat Sheet': [
+    'Menu': [
+      {
+        type: 'doc',
+        id: 'cheatsheet'
+      },
       {
         type: 'category',
         label: 'Getting Started',
-        items: ['installation', 'cheatsheet'],
+        items: ['installation'],
       },
       {
         type: 'category',
