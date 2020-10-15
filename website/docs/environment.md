@@ -24,10 +24,9 @@ from azureml.core import Environment
 env = Environment.from_conda_specifications('<environment-name>', '<path/to/env.yml>')
 ```
 
-### Quick n' Dirty (aka "From SDK")
+### From SDK
 
-Sometimes you want to get something up and running quickly without the need for `env.yml`
-or `requirement.txt` files. In such cases you can make use of `CondaDependencies`.
+Use the `CondaDependencies` class to create a Python environment in code:
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -142,6 +141,25 @@ dependencies:
 name: azureml_eb61e39e20e87ad998ae2c88df1dd0af
 ```
 
+## Save / Load Environments
+
+Save an environment to a local directory
+
+```python
+env.save_to_directory('<path/to/local/directory>', overwrite=True)
+```
+
+This will generate a directory with two (human-understandable and editable) files:
+
+- `azureml_environment.json` : Metadata including name, version, environment variables and Python and Docker configuration
+- `conda_dependencies.yml` : Standard conda dependencies YAML e.g. `$ conda create -f conda_dependencies.yml`
+
+Load this environment later with
+
+```python
+env = Environment.load_from_directory('<path/to/local/directory>')
+```
+
 ## (Advanced) Custom Docker Images
 
 By default, Azure ML will create your Python environment inside a Docker image it maintains.
@@ -216,7 +234,7 @@ In this case you need to:
 - Specify the path to your Python interpreter: `interpreter_path=<path>`
 
 ```python
-env = Environment('pytorch')
+env = Environment('pytorch')    # create an Environment called 'pytorch'
 
 # set up custom docker image
 env.docker.base_image = None
@@ -225,4 +243,14 @@ env.docker.base_dockerfile = "./Dockerfile"
 # indicate how to run Python
 env.python.user_managed_dependencies=True
 env.python.interpreter_path = "/opt/miniconda/bin/python"
+```
+
+## (Advanced) Environment Variables
+
+To set environment variables use the `environment_variables: Dict[str, str]` attribute. Environment variables
+are set on the process where the user script is executed.
+
+```python
+env = Environment('example')
+env.environment_variables['EXAMPLE_ENV_VAR'] = 'EXAMPLE_VALUE'
 ```

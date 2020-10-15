@@ -33,8 +33,8 @@ module.exports = {
       },
       {
         type: 'category',
-        label: 'Common Scenarios',
-        items: ['script-run-config', 'logging'],
+        label: 'Submitting Code',
+        items: ['run', 'script-run-config', 'logging'],
       },
       {
         type: 'category',

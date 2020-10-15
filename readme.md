@@ -1,16 +1,8 @@
-## tmp/ Tech Review
+## TODO
 
-- [ ] Create version
-    - [ ] Add version selector
-- [ ] Add snippets:
-    - [ ] To github
-    - [ ] Page in website
-- [ ] Add contributors guide
-- [ ] Add Alex's example of "setup" in dockerfile and download data
-- [ ] Clean up TODOs
-- [ ] Github
-    - [ ] Push to ghpages branch
-    - [ ] Push docusaursu branch to master
+- Pipelines: basic page, how to use datasets with pipelines, environments with pipelines, ...
+- Use DataReference examples (cannot use with ScriptRunConfig via arguments)
+
 
 ## Contribution Guide
 

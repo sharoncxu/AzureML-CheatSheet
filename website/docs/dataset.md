@@ -2,9 +2,11 @@
 title: Dataset
 ---
 
-## From local data
+## Create Dataset
 
-### Upload to datastore
+### From local data
+
+#### Upload to datastore
 
 To upload a local directory `./data/`:
 
@@ -16,7 +18,7 @@ datastore.upload(src_dir='./data', target_path='<path/on/datastore>', overwrite=
 This will upload the entire directory `./data` from local to the default datastore associated
 to your workspace `ws`.
 
-### Create dataset from files in datastore
+#### Create dataset from files in datastore
 
 To create a dataset from a directory on a datastore at `<path/on/datastore>`:
 
@@ -25,13 +27,23 @@ datastore = ws.get_default_datastore()
 dataset = Dataset.File.from_files(path=(datastore, '<path/on/datastore>'))
 ```
 
-### Use dataset in a remote run
+## Use Dataset
+
+### ScriptRunConfig
 
 To reference data from a dataset in a ScriptRunConfig you can either mount or download the
 dataset using:
 
-- `dataset.as_mount()` : mount dataset to a remote run
-- `dataset.as_download()` : download the dataset to a remote run
+- `dataset.as_mount(path_on_compute)` : mount dataset to a remote run
+- `dataset.as_download(path_on_compute)` : download the dataset to a remote run
+
+**Path on compute** Both `as_mount` and `as_download` accept an (optional) parameter `path_on_compute`.
+This defines the path on the compute target where the data is made available.
+
+- If `None`, the data will be downloaded into a temporary directory.
+- If `path_on_compute` starts with a `/` it will be treated as an **absolute path**. (If you have 
+specified an absolute path, please make sure that the job has permission to write to that directory.)
+- Otherwise it will be treated as relative to the working directory
 
 Reference this data in a remote run, for example in mount-mode:
 

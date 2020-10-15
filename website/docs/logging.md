@@ -2,9 +2,11 @@
 title: Logging Metrics
 ---
 
-### Logging metrics
+## Logging metrics
 
-To log metrics in your running script add the following:
+### log
+
+Log a single metric value to a run.
 
 ```python
 from azureml.core import Run
@@ -12,9 +14,21 @@ run = Run.get_context()
 run.log('metric-name', metric_value)
 ```
 
-### Viewing metrics with the Python SDK
+### log_row
 
-Viewing metrics in a run
+Log a metric with multiple columns
+
+```python
+from azureml.core import Run
+run = Run.get_context()
+run.log_row("Y over X", x=1, y=0.4)
+```
+
+## Viewing metrics
+
+### Via the SDK
+
+Viewing metrics in a run (for more details on runs: [Run](run))
 
 ```python
 metrics = run.get_metrics()

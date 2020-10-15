@@ -80,6 +80,12 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Microsoft // Built with Docusaurus2`,
     },
+    algolia: {
+      apiKey: 'd4ee9b6c7a8efe0a93f6455726bf8bbe',
+      indexName: 'azureml_cheatsheet',
+      searchParameters: {},
+      placeholder: 'Search cheat sheet'
+    },
   },
   presets: [
     [
