@@ -100,7 +100,7 @@ To work with data in your training scripts using your workspace `ws` and its def
 datastore = ws.get_default_datastore()
 dataset = Dataset.File.from_files(path=(datastore, '<path/on/datastore>'))
 ```
-For more details see: [Datastore](datastore) and [Dataset](dataset)
+For more details see: [Data](data)
 
 Pass this to your training script as a command line argument.
 

@@ -20,14 +20,14 @@ module.exports = {
           label: 'Cheat Sheet',
           position: 'left',
         },
-        {position: 'left', type: 'docsVersionDropdown'},
-        {
-          to: 'docs/cbdocs/cookbook',
-          label: 'Cookbook',
-          position: 'left',
-        },
+        // {position: 'left', type: 'docsVersionDropdown'},
+        // {
+        //   to: 'docs/cbdocs/cookbook',
+        //   label: 'Cookbook',
+        //   position: 'left',
+        // },
         {to: 'docs/vs-code-snippets/snippets', label: 'Snippets', position: 'left'},
-        {to: 'blog', label: 'Blog', position: 'left'},
+        // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/aminsaied',
           label: 'GitHub',

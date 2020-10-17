@@ -1,15 +1,18 @@
 ---
-title: Run
+title: Experiment and Run
 ---
+
+## Concepts
+
+### Run
 
 A run represents a single execution of your code.
 
 Azure ML is a machine-learning service that facilitates running your code in
-the cloud. A `Run` is an abstraction layer around each such submission that
-can be used to monitor monitor the job in real time as well as keep a history
-of your results.
+the cloud. A `Run` is an abstraction layer around each such submission, and is used to
+monitor the job in real time as well as keep a history of your results.
 
-## Experiments
+### Experiments
 
 An experiment is a light-weight container for `Run`. Use experiments to submit
 and track runs.
@@ -36,7 +39,7 @@ config = ScriptRunConfig(source_directory=<'<path/to/script>'>, script='train.py
 run = exp.submit(config)
 ```
 
-See more details: [ScriptRunConfig](script-run-config)
+For more details: [ScriptRunConfig](script-run-config)
 
 ### Get Context
 

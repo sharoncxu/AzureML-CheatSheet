@@ -22,25 +22,13 @@ module.exports = {
       {
         type: 'category',
         label: 'Basic Assets',
-        items: [
-          'workspace', 'compute-targets', 'environment',
-          {
-            type: 'category',
-            label: 'Data',
-            items: ['datastore', 'dataset']
-          }
-        ],
+        items: ['workspace', 'compute-targets', 'environment', 'data'],
       },
       {
         type: 'category',
         label: 'Submitting Code',
         items: ['run', 'script-run-config', 'logging'],
-      },
-      {
-        type: 'category',
-        label: 'Advanced Scenarios',
-        items: ['docker-build', 'distributed-training'],
-      },
+      }
     ],
   },
   secondaySidebar: {

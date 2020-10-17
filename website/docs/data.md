@@ -1,6 +1,39 @@
 ---
-title: Datastore
+title: Data
 ---
+
+## Concepts
+
+AzureML provides two basic assets for working with data:
+
+- Datastore
+- Dataset
+
+### Datastore
+
+Provides an interface for numerous Azure Machine Learning storage accounts.
+
+Each Azure ML workspace comes with a default datastore:
+
+```python
+from azureml.core import Workspace
+ws = Workspace.from_config()
+datastore = ws.get_default_datastore()
+```
+
+which can also be accessed directly from the [Azure Portal](https://portal.azure.com) (under the same 
+resource group as your Azure ML Workspace).
+
+Datastores are attached to workspaces and are used to store connection information to Azure storage services so you can refer to them by name and don't need to remember the connection information and secret used to connect to the storage services.
+
+Use this class to perform management operations, including register, list, get, and remove datastores.
+
+### Dataset
+
+A dataset is a reference to data - either in a datastore or behind a public URL.
+
+Datasets provide enhaced capabilities including data lineage (with the notion of versioned datasets).
+
 
 ## Get Datastore
 
@@ -130,36 +163,69 @@ config = ScriptRunConfig(
 config.run_config.data_references[data_ref.data_reference_name] = data_ref.to_config()
 ```
 
+## Create Dataset
 
+### From local data
 
+#### Upload to datastore
 
-
-
-<!-- 
-Creating a DataReference explicitly allows you to specify the path on compute. We can then reference
-this path directly from within our code without having to use command-line arguments.
+To upload a local directory `./data/`:
 
 ```python
-from azureml.data.data_reference import DataReference
-
-data_ref : DataReference = DataReference (
-    datastore=ds,
-    data_reference_name='data_ref',
-    path_on_datastore='example/data_dir',
-    mode='mount',
-    path_on_compute='/tmp/data',
-    overwrite=True,
-)
+datastore = ws.get_default_datastore()
+datastore.upload(src_dir='./data', target_path='<path/on/datastore>', overwrite=True)
 ```
 
-Now `script.py` can reference `/tmp/data` directly.
+This will upload the entire directory `./data` from local to the default datastore associated
+to your workspace `ws`.
+
+#### Create dataset from files in datastore
+
+To create a dataset from a directory on a datastore at `<path/on/datastore>`:
 
 ```python
-config = ScriptRunConfig(
-    source_directory='.',
-    script='script.py',
-    compute_target=compute_target,
-)
+datastore = ws.get_default_datastore()
+dataset = Dataset.File.from_files(path=(datastore, '<path/on/datastore>'))
+```
 
-config.run_config.data_references['data_ref'] = data_ref.to_config()
-``` -->
+## Use Dataset
+
+### ScriptRunConfig
+
+To reference data from a dataset in a ScriptRunConfig you can either mount or download the
+dataset using:
+
+- `dataset.as_mount(path_on_compute)` : mount dataset to a remote run
+- `dataset.as_download(path_on_compute)` : download the dataset to a remote run
+
+**Path on compute** Both `as_mount` and `as_download` accept an (optional) parameter `path_on_compute`.
+This defines the path on the compute target where the data is made available.
+
+- If `None`, the data will be downloaded into a temporary directory.
+- If `path_on_compute` starts with a `/` it will be treated as an **absolute path**. (If you have 
+specified an absolute path, please make sure that the job has permission to write to that directory.)
+- Otherwise it will be treated as relative to the working directory
+
+Reference this data in a remote run, for example in mount-mode:
+
+
+```python title="run.py"
+arguments=[dataset.as_mount()]
+config = ScriptRunConfig(source_directory='.', script='train.py', arguments=arguments)
+experiment.submit(config)
+```
+
+and consumed in `train.py`:
+
+```python title="train.py"
+import sys
+data_dir = sys.argv[1]
+
+print("===== DATA =====")
+print("DATA PATH: " + data_dir)
+print("LIST FILES IN DATA DIR...")
+print(os.listdir(data_dir))
+print("================")
+```
+
+For more details: [ScriptRunConfig](script-run-config)

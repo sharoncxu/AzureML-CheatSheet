@@ -29,30 +29,19 @@ env = Environment.from_conda_specification('pytorch', 'env.yml')
 env.register(ws)
 ```
 
-In order to consume this environment in, say, a remote run, Azure ML creates a docker image
+In order to consume this environment in, say, a remote run, Azure ML builds a docker image
 that creates the corresponding python environment.
 
-You can replicate the process by which this image is created as follows:
+The dockerfile used to build this image is available directly from the environment object.
 
 ```python
-build = env.build_local(ws, useDocker=True, pushImageToWorkspaceAcr=True)
+details = env.get_image_details(ws)
+print(details['ingredients']['dockerfile'])
 ```
 
-This will build the Docker image from your environment locally. The first line output will be
-of the form
+Which looks like this:
 
-```console
-Saving setup content into /tmp/tmpmaul3d0t
-```
-
-If we take a look in that directory we will see two interesting files:
-
-- `Dockerfile` : used to build the image
-- `mutated_conda_dependencies.yml` : a modified version of `env.yml`
-
-First the contents of the Dockerfile:
-
-```docker title="Dockerfile" {7-12}
+```docker title="Dockerfile" {1,7-12}
 FROM mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20200821.v1@sha256:8cee6f674276dddb23068d2710da7f7f95b119412cc482675ac79ba45a4acf99
 USER root
 RUN mkdir -p $HOME/.cache
@@ -74,9 +63,21 @@ ENV AZUREML_ENVIRONMENT_IMAGE True
 CMD ["bash"]
 ```
 
-The highlighted lines copy the `mutated_conda_dependencies.yml` and then use `conda env create -f` to create the environment.
+Notice:
 
-```yml title="mutated_conda_dependencies.yml"
+- The base image here is a standard image maintained by Azure ML. Dockerfiles for all base images are available on
+github: https://github.com/Azure/AzureML-Containers
+- The dockerfile references `mutated_conda_dependencies.yml` to build the Python environment via Conda.
+
+Get the contents of `mutated_conda_dependencies.yml` from the environment:
+
+```python
+print(env.python.conda_dependencies.serialize_to_string())
+```
+
+Which looks like
+
+```bash title="mutated_conda_dependencies.yml"
 channels:
     - defaults
     - pytorch
@@ -86,7 +87,3 @@ dependencies:
     - torchvision
 name: azureml_7459a71437df47401c6a369f49fbbdb6
 ```
-
-We see that this is identical to `env.yml` with the exception of the environment name.
-
-**TODO: Is this always the case?**
