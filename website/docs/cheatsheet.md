@@ -1,6 +1,7 @@
 ---
 title: Cheat Sheet
 id: cheatsheet
+slug: /
 ---
 
 ### Basic setup

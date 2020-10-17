@@ -1,7 +1,9 @@
 ## TODO
 
 - Pipelines: basic page, how to use datasets with pipelines, environments with pipelines, ...
-- Use DataReference examples (cannot use with ScriptRunConfig via arguments)
+- Run History page is floating in free space :-)
+- Add blog posts
+- Add cookbook
 
 
 ## Contribution Guide
@@ -14,7 +16,11 @@
 
 - Start a local server with `yarn start` (again from within the `website` directory)
 
-- Deploy to GH Pages: https://v2.docusaurus.io/docs/deployment#deploying-to-github-pages
+- Deploy to GH Pages:
+
+    - Build: `yarn run build`
+    - Deploy: `GIT_USER=<GITHUB_USERNAME> yarn deploy`
+    - More details: https://v2.docusaurus.io/docs/deployment#deploying-to-github-pages
 
 ## Adding Snippets
 

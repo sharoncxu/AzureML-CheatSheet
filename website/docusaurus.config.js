@@ -16,7 +16,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/cheatsheet',
+          to: 'docs/',
           label: 'Cheat Sheet',
           position: 'left',
         },

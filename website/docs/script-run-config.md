@@ -1,6 +1,8 @@
 ---
-title: ScriptRunConfig
+title: Running Code in the Cloud
 ---
+
+## ScriptRunConfig
 
 A common way to run code in the cloud is via the `ScriptRunConfig` which packages
 your source code (Script) and run configuration (RunConfig).
