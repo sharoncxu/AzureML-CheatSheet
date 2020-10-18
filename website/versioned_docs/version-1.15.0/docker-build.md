@@ -8,7 +8,7 @@ For some background: [Environment](environment)
 
 ## Build Azure ML Docker Image from an environment
 
-Suppore you create an environment - in this example we will work with Conda:
+Suppose you create an environment - in this example we will work with Conda:
 
 ```yml title="env.yml"
 name: pytorch
