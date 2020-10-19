@@ -1,10 +1,10 @@
-name: websitev2
+name: deploy-website
 
 on:
   pull_request:
-    branches: [website]
+    branches: [docs]
   push:
-    branches: [website]
+    branches: [docs]
 
 jobs:
   checks:
