@@ -1,5 +1,5 @@
 ---
-title: Metrics Test
+title: Metrics
 ---
 
 ## Logging metrics
