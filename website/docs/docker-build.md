@@ -1,14 +1,23 @@
 ---
-title: 'Azure ML Docker Build'
+title: 'Azure ML Containers'
 ---
 
-In this post we explain how Azure ML builds its docker image based on an `Environment`.
+In this post we explain how Azure ML builds the containers used to run your code.
 
-For some background: [Environment](environment)
+## Dockerfile
 
-## Build Azure ML Docker Image from an environment
+Each job in Azure ML runs with an associated `Environment`. In practice, each environment
+corresponds to a Docker image.
 
-Suppore you create an environment - in this example we will work with Conda:
+There are numerous ways to define an environment - from specifying a set of required Python packages
+through to directly providing a custom Docker image. In each case the contents of the associated
+dockerfile are available directly from the environment object.
+
+For more background: [Environment](environment)
+
+#### Example
+
+Suppose you create an environment - in this example we will work with Conda:
 
 ```yml title="env.yml"
 name: pytorch
@@ -29,7 +38,7 @@ env = Environment.from_conda_specification('pytorch', 'env.yml')
 env.register(ws)
 ```
 
-In order to consume this environment in, say, a remote run, Azure ML builds a docker image
+In order to consume this environment in a remote run, Azure ML builds a docker image
 that creates the corresponding python environment.
 
 The dockerfile used to build this image is available directly from the environment object.
@@ -39,7 +48,7 @@ details = env.get_image_details(ws)
 print(details['ingredients']['dockerfile'])
 ```
 
-Which looks like this:
+Let's take a look:
 
 ```docker title="Dockerfile" {1,7-12}
 FROM mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20200821.v1@sha256:8cee6f674276dddb23068d2710da7f7f95b119412cc482675ac79ba45a4acf99

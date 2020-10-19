@@ -28,6 +28,11 @@ module.exports = {
         type: 'category',
         label: 'Submitting Code',
         items: ['run', 'script-run-config', 'logging'],
+      },
+      {
+        type: 'category',
+        label: 'Advanced Guides',
+        items: ['distributed-training', 'docker-build']
       }
     ],
   },
