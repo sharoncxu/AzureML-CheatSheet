@@ -86,6 +86,9 @@ module.exports = {
       searchParameters: {},
       placeholder: 'Search cheat sheet'
     },
+    googleAnalytics: {
+      trackingID: 'G-2DKKZ26VP0',
+    }
   },
   presets: [
     [

@@ -17,21 +17,25 @@ module.exports = {
       {
         type: 'category',
         label: 'Getting Started',
+        collapsed: false,
         items: ['installation'],
       },
       {
         type: 'category',
         label: 'Basic Assets',
+        collapsed: false,
         items: ['workspace', 'compute-targets', 'environment', 'data'],
       },
       {
         type: 'category',
         label: 'Submitting Code',
+        collapsed: false,
         items: ['run', 'script-run-config', 'logging'],
       },
       {
         type: 'category',
         label: 'Advanced Guides',
+        collapsed: false,
         items: ['distributed-training', 'docker-build']
       }
     ],
