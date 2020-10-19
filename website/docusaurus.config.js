@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://aminsaied.github.io',
   baseUrl: '/AzureML-CheatSheet/',
   onBrokenLinks: 'ignore',
-  favicon: 'img/aml-logo.png',
+  favicon: 'img/logo.svg',
   organizationName: 'aminsaied', // Usually your GitHub org/user name.
   projectName: 'AzureML-CheatSheet', // Usually your repo name.
   themeConfig: {
@@ -29,7 +29,7 @@ module.exports = {
         {to: 'docs/vs-code-snippets/snippets', label: 'Snippets', position: 'left'},
         // {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/aminsaied',
+          href: 'https://github.com/aminsaied/AzureML-CheatSheet',
           label: 'GitHub',
           position: 'right',
         },
