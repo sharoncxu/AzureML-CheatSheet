@@ -9,34 +9,31 @@
 
 module.exports = {
   mainSidebar: {
-    'Azure ML Cheat Sheet': [
+    'Menu': [
+      {
+        type: 'doc',
+        id: 'cheatsheet'
+      },
       {
         type: 'category',
         label: 'Getting Started',
-        items: ['installation', 'cheatsheet'],
+        items: ['installation'],
       },
       {
         type: 'category',
         label: 'Basic Assets',
-        items: [
-          'workspace', 'compute-targets', 'environment',
-          {
-            type: 'category',
-            label: 'Data',
-            items: ['datastore', 'dataset']
-          }
-        ],
+        items: ['workspace', 'compute-targets', 'environment', 'data'],
       },
       {
         type: 'category',
-        label: 'Common Scenarios',
-        items: ['script-run-config', 'logging'],
+        label: 'Submitting Code',
+        items: ['run', 'script-run-config', 'logging'],
       },
       {
         type: 'category',
-        label: 'Advanced Scenarios',
-        items: ['docker-build', 'distributed-training'],
-      },
+        label: 'Advanced Guides',
+        items: ['distributed-training', 'docker-build']
+      }
     ],
   },
   secondaySidebar: {

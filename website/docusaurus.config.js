@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://aminsaied.github.io',
   baseUrl: '/AzureML-CheatSheet/',
   onBrokenLinks: 'ignore',
-  favicon: 'img/aml-logo.png',
+  favicon: 'img/logo.svg',
   organizationName: 'aminsaied', // Usually your GitHub org/user name.
   projectName: 'AzureML-CheatSheet', // Usually your repo name.
   themeConfig: {
@@ -16,20 +16,20 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/cheatsheet',
+          to: 'docs/',
           label: 'Cheat Sheet',
           position: 'left',
         },
-        {position: 'left', type: 'docsVersionDropdown'},
-        {
-          to: 'docs/cbdocs/cookbook',
-          label: 'Cookbook',
-          position: 'left',
-        },
+        // {position: 'left', type: 'docsVersionDropdown'},
+        // {
+        //   to: 'docs/cbdocs/cookbook',
+        //   label: 'Cookbook',
+        //   position: 'left',
+        // },
         {to: 'docs/vs-code-snippets/snippets', label: 'Snippets', position: 'left'},
-        {to: 'blog', label: 'Blog', position: 'left'},
+        // {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/aminsaied',
+          href: 'https://github.com/aminsaied/AzureML-CheatSheet',
           label: 'GitHub',
           position: 'right',
         },
@@ -79,6 +79,12 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Microsoft // Built with Docusaurus2`,
+    },
+    algolia: {
+      apiKey: 'd4ee9b6c7a8efe0a93f6455726bf8bbe',
+      indexName: 'azureml_cheatsheet',
+      searchParameters: {},
+      placeholder: 'Search cheat sheet'
     },
   },
   presets: [

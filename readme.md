@@ -14,7 +14,9 @@
     yarn start
     ```
 
-- Deploy to GH Pages: https://v2.docusaurus.io/docs/deployment#deploying-to-github-pages
+    - Build: `yarn run build`
+    - Deploy: `GIT_USER=<GITHUB_USERNAME> yarn deploy`
+    - More details: https://v2.docusaurus.io/docs/deployment#deploying-to-github-pages
 
 ## Adding Snippets
 

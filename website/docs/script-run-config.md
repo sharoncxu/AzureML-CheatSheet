@@ -1,12 +1,13 @@
 ---
-title: Running code in the cloud
+title: Running Code in the Cloud
 ---
 
 ## ScriptRunConfig
 
-A common way to run code in the cloud is via the `ScriptRunConfig`.
+A common way to run code in the cloud is via the `ScriptRunConfig` which packages
+your source code (Script) and run configuration (RunConfig).
 
-Assuming the following directory structure.
+Consider the following layout for your code.
 
 ```bash
 source_directory/
@@ -33,12 +34,12 @@ config = ScriptRunConfig(
 where:
 
 - `source_directory='source_directory'` : Local directory with your code.
-- `script='script.py'` : Script to run.
+- `script='script.py'` : Script to run. This does not need to be at the root of `source_directory`.
 - `compute_taget=target` : See [Compute Target](copute-target)
 - `environment` : See [Environment](environment)
 - `arguments` : See [Arguments](#command-line-arguments)
 
-### Command Line Arguments
+## Command Line Arguments
 
 To pass command line arguments to your script use the `arguments` parameter in `ScriptRunConfig`.
 Arguments are passed as a list
@@ -63,7 +64,7 @@ Arguments can be of type `int`, `float` `str` and can also be used to reference 
 
 For more details on referencing data via the command line: [Use dataset in a remote run](dataset#use-dataset-in-a-remote-run)
 
-#### Example: `sys.argv`
+### Example: `sys.argv`
 
 In this example we pass two arguments to our script. If we were running this from the
 console:
@@ -92,7 +93,7 @@ learning_rate = sys.argv[1]     # gets 0.001
 momentum = sys.argv[2]          # gets 0.9
 ```
 
-#### Example: `argparse`
+### Example: `argparse`
 
 In this example we pass two named arguments to our script. If we were running this from the
 console:
@@ -128,3 +129,47 @@ args = parser.parse_args()
 learning_rate = args.learning_rate      # gets 0.001
 momentum = args.momentum                # gets 0.9
 ```
+
+## Using Datasets
+
+### via Arguments
+
+Pass a dataset to your ScriptRunConfig as an argument
+
+```py
+# create dataset
+datastore = ws.get_default_datastore()
+dataset = Dataset.File.from_files(path=(datastore, '<path/on/datastore>'))
+
+arguments = [
+    '--dataset', dataset.as_mount()
+]
+
+config = ScriptRunConfig(
+    source_directory='.',
+    script='script.py',
+    arguments=arguments,
+)
+```
+
+This mounts the dataset to the run where it can be referenced by `script.py`.
+
+### via RunConfiguration
+
+Pass a dataset to your ScriptRunConfig without using command-line arguments.
+
+```py
+# create dataset
+datastore = ws.get_default_datastore()
+dataset = Dataset.File.from_files(path=(datastore, '<path/on/datastore>'))
+
+config = ScriptRunConfig(
+    source_directory='.',
+    script='script.py',
+)
+
+config.run_config.data['<name>'] = dataset.as_mount('<path_on_compute>')
+```
+
+This mounts the dataset to the run at the specified `'<path_on_compute>'` where
+it can be referenced by `script.py`.
